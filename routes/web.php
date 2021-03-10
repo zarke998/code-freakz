@@ -21,3 +21,7 @@ Route::get('/courses', function () {
     return view('pages.courses');
 });
 
+Route::get('/contact', function () {
+    return view('pages.contact');
+});
+
