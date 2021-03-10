@@ -36,3 +36,7 @@ Route::get("/login", function (){
 Route::get("/register", function (){
     return view("pages.register");
 });
+
+Route::get("/about", function (){
+    return view("pages.about");
+});

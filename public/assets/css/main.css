@@ -1,12 +1,25 @@
 :root{
     --yellow-primary: #F5BC04;
-    --link-black: black;
+    --link-color: black;
+    --link-hover-color: var(--yellow-primary);
     --search-border-color: var(--yellow-primary);
     --language-tag-attached-color: white;
     --account-bar-color: black;
     --button-color: var(--yellow-primary);
     --checkbox-color: var(--yellow-primary);
     --input-border-color: var(--yellow-primary);
+
+    /*Socials*/
+    --facebook-color: #1773EA;
+    --twitter-color: #1C9CEA;
+    --instagram-color: #F73281;
+    --youtube-color: #F70000;
+    --twitch-color: #8C45F7;
+
+}
+
+ul{
+    list-style-type: none;
 }
 
 .profile-img{
@@ -62,7 +75,60 @@
     background-color: var(--account-bar-color);
 }
 
+/*#region Social icons*/
+
+#socialLinks li{
+    margin: 0px 10px;
+}
+
+.social-icon{
+    font-size: 32px;
+}
+
+.facebook-icon{
+    color: var(--facebook-color);
+}
+.facebook-icon:hover {
+    filter: brightness(110%);
+}
+
+.twitter-icon{
+    color: var(--twitter-color);
+}
+.twitter-icon:hover {
+    filter: brightness(110%);
+}
+
+.instagram-icon{
+    color: var(--instagram-color);
+}
+.instagram-icon:hover {
+    filter: brightness(110%);
+}
+
+.youtube-icon{
+    color: var(--youtube-color);
+}
+.youtube-icon:hover {
+    filter: brightness(110%);
+}
+
+.twitch-icon{
+    color: var(--twitch-color);
+}
+.twitch-icon:hover {
+    filter: brightness(110%);
+}
+/*#endregion*/
+
 /*#region CF CLASSES*/
+
+.cf-link{
+    color: var(--link-color);
+}
+.cf-link:hover{
+    color: var(--link-hover-color);
+}
 
 .cf-input:focus{
     border-color: var(--input-border-color);
