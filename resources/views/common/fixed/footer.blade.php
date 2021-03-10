@@ -93,8 +93,10 @@
         crossorigin="anonymous"></script>
 <!-- Waypoints -->
 <script src="{{ asset("assets/js/jquery.waypoints.min.js") }}"></script>
+
 <!-- Main -->
 <script src="{{ asset("assets/js/main.js") }}"></script>
+<script src="{{ asset("assets/js/cf-main.js") }}"></script>
 @yield("scripts")
 
 </body>

@@ -21,6 +21,12 @@
         <!-- Modernizr JS -->
         <script src="{{ asset('assets/js/modernizr-3.5.0.min.js') }}"></script>
 
+        {{--Materialize Icons--}}
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        {{--Main CSS--}}
+        <link href="{{ asset('assets/css/main.css') }}" type="text/css" rel="stylesheet"/>
+
         @yield("stylesheets")
     </head>
 
