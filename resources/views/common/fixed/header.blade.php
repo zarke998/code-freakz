@@ -1,8 +1,8 @@
 <body class="@yield("body-classes")">
 <div class="container-fluid account-bar pr-md-4 pr-lg-5">
     <div class="d-flex justify-content-end">
-        <a href="#" class="cf-button">Register</a>
-        <a href="#" class="cf-button ml-2">Login</a>
+        <a href="#" class="cf-button cf-button-small">Register</a>
+        <a href="#" class="cf-button cf-button-small ml-2">Login</a>
     </div>
 </div>
 <div class="container-fluid fh5co_header_bg">

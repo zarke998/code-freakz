@@ -29,3 +29,6 @@ Route::get("/product_single", function(){
     return view("pages.product_single");
 });
 
+Route::get("/login", function (){
+    return view("pages.login");
+});
