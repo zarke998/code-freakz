@@ -1,4 +1,4 @@
-<body>
+<body class="@yield("body-classes")">
 <div class="container-fluid account-bar pr-md-4 pr-lg-5">
     <div class="d-flex justify-content-end">
         <a href="#" class="cf-button">Register</a>
