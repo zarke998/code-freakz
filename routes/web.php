@@ -24,6 +24,9 @@ Route::get('/courses', function () {
 Route::get('/courses/edit', function () {
     return view('pages.courses.edit');
 });
+Route::get('/courses/create', function () {
+    return view('pages.courses.create');
+});
 
 Route::get('/contact', function () {
     return view('pages.contact');
