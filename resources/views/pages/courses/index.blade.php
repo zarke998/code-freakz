@@ -22,7 +22,7 @@
                         </div>
                     </div>
                     <div class="col-md-7 animate-box">
-                        <a href="product_single.blade.php" class="fh5co_magna py-2"> Magna aliqua ut enim ad minim veniam quis
+                        <a href="../product_single.blade.php" class="fh5co_magna py-2"> Magna aliqua ut enim ad minim veniam quis
                         nostrud quis xercitation ullamco. </a> <a href="#" class="fh5co_mini_time py-3"> Thomson Smith -
                         April 18,2016 </a>
                         <div class="fh5co_consectetur"> Amet consectetur adipisicing elit, sed do eiusmod tempor incididunt
@@ -38,7 +38,7 @@
                         </div>
                     </div>
                     <div class="col-md-7">
-                        <a href="product_single.blade.php" class="fh5co_magna py-2"> Magna aliqua ut enim ad minim veniam quis
+                        <a href="../product_single.blade.php" class="fh5co_magna py-2"> Magna aliqua ut enim ad minim veniam quis
                         nostrud quis xercitation ullamco. </a> <a href="#" class="fh5co_mini_time py-3"> Thomson Smith -
                         April 18,2016 </a>
                         <div class="fh5co_consectetur"> Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -57,7 +57,7 @@
                         </div>
                     </div>
                     <div class="col-md-7">
-                        <a href="product_single.blade.php" class="fh5co_magna py-2"> Magna aliqua ut enim ad minim veniam quis
+                        <a href="../product_single.blade.php" class="fh5co_magna py-2"> Magna aliqua ut enim ad minim veniam quis
                         nostrud quis xercitation ullamco. </a> <a href="#" class="fh5co_mini_time py-3"> Thomson Smith -
                         April 18,2016 </a>
                         <div class="fh5co_consectetur"> Quis nostrud xercitation ullamco laboris nisi aliquip ex ea commodo
@@ -73,7 +73,7 @@
                         </div>
                     </div>
                     <div class="col-md-7">
-                        <a href="product_single.blade.php" class="fh5co_magna py-2"> Magna aliqua ut enim ad minim veniam quis
+                        <a href="../product_single.blade.php" class="fh5co_magna py-2"> Magna aliqua ut enim ad minim veniam quis
                         nostrud quis xercitation ullamco. </a> <a href="#" class="fh5co_mini_time py-3"> Thomson Smith -
                         April 18,2016 </a>
                         <div class="fh5co_consectetur"> Amet consectetur adipisicing elit, sed do eiusmod tempor incididunt

@@ -17,8 +17,12 @@ Route::get('/', function () {
     return view('pages.home');
 });
 
+// Courses
 Route::get('/courses', function () {
-    return view('pages.courses');
+    return view('pages.courses.index');
+});
+Route::get('/courses/edit', function () {
+    return view('pages.courses.edit');
 });
 
 Route::get('/contact', function () {

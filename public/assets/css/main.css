@@ -8,6 +8,9 @@
     --button-color: var(--yellow-primary);
     --checkbox-color: var(--yellow-primary);
     --input-border-color: var(--yellow-primary);
+    --text-area-color: rgba(0, 0, 0, 0.15);
+    --text-area-hover-color: var(--yellow-primary);
+    --select-text-color: #696969;
 
     /*Socials*/
     --facebook-color: #1773EA;
@@ -123,6 +126,10 @@ ul{
 
 /*#region CF CLASSES*/
 
+.cf-text-medium{
+    font-size: 22px;
+}
+
 .cf-link{
     color: var(--link-color);
 }
@@ -130,6 +137,7 @@ ul{
     color: var(--link-hover-color);
 }
 
+/*#region CF INPUTS*/
 .cf-input:focus{
     border-color: var(--input-border-color);
 }
@@ -152,6 +160,7 @@ ul{
 .cf-button:focus{
     color: black;
     text-decoration: none;
+    outline: none;
 }
 
 .cf-button-small{
@@ -159,6 +168,85 @@ ul{
     min-width: 75px;
     font-size: 12px;
 }
+
+.cf-text-area{
+    border: 1px solid var(--text-area-color);
+    padding: 10px;
+}
+.cf-text-area:focus{
+    border: 1px solid var(--text-area-hover-color);
+    outline: none;
+}
+.cf-text-area::placeholder{
+    font-size: 16px;
+}
+
+.cf-select{
+    color: var(--select-text-color);
+    padding-left: 10px;
+}
+
+/*#region cf-checkbox*/
+.cf-checkbox div{
+    position: relative;
+}
+/*LABEL*/
+.cf-checkbox label {
+    margin-bottom: 5px !important;
+    user-select: none;
+}
+.cf-checkbox label:hover {
+    cursor: pointer;
+}
+/*CHECKBOX INPUT*/
+.cf-checkbox div input{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+.cf-checkbox div input:hover {
+    cursor: pointer;
+}
+.cf-checkbox div input:checked~.cf-checked{
+    display: inline-block;
+}
+.cf-checkbox div input:checked~.cf-unchecked{
+    display: none;
+}
+
+.cf-checkbox div input:not(:checked)~.cf-checked{
+    display: none;
+}
+.cf-checkbox div input:not(:checked)~.cf-unchecked{
+    display: inline-block;
+}
+
+.cf-checkbox div input:not(:checked)~.cf-unchecked{
+    display: inline-block;
+}
+/*CHECKED*/
+.cf-checkbox .cf-checked{
+    display: none;
+    color: var(--checkbox-color);
+}
+.cf-checkbox .cf-checked:hover{
+    user-select: none;
+    cursor: pointer;
+}
+/*UNCHECKED*/
+.cf-checkbox .cf-unchecked{
+    display: inline-block;
+    color: black;
+}
+.cf-checkbox .cf-checked:hover{
+    user-select: none;
+    cursor: pointer;
+}
+/*#endregion*/
+
+/*#endregion*/
+
 /*#endregion*/
 
 /*#region MEDIA QUERIES*/
