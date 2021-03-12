@@ -28,6 +28,7 @@ Route::get('/courses/create', function () {
     return view('pages.courses.create');
 });
 
+
 Route::get('/contact', function () {
     return view('pages.contact');
 });
@@ -46,4 +47,9 @@ Route::get("/register", function (){
 
 Route::get("/about", function (){
     return view("pages.about");
+});
+
+// Admin
+Route::get("/admin/content", function(){
+    return view("pages.admin.content");
 });

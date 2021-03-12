@@ -1,0 +1,41 @@
+body{
+    background-color: #f8f8f8;
+}
+
+.admin-top-nav{
+    background-color: var(--admin-top-nav-color);
+}
+.admin-left-nav{
+    width: 250px;
+    height: 100%;
+    padding: 20px 0px;
+
+    background-color: white;
+}
+
+.admin-left-nav h2{
+    font-size: 22px;
+}
+
+/*#region Control panel*/
+.admin-control-panel li:first-child a{
+    /*border-top: 1px solid black;*/
+}
+.admin-control-panel a {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    color: black;
+
+    /*border-bottom: 1px solid black;*/
+}
+.admin-control-panel a:hover{
+    text-decoration: none;
+    background-color: var(--yellow-primary);
+    color: white;
+}
+.admin-control-panel i {
+    font-size:18px;
+    margin-right: 10px;
+}
+/*#endregion*/

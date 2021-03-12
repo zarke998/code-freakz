@@ -2,9 +2,12 @@
     --yellow-primary: #F5BC04;
     --link-color: black;
     --link-hover-color: var(--yellow-primary);
-    --search-border-color: var(--yellow-primary);
     --language-tag-attached-color: white;
     --account-bar-color: black;
+    --text-color-on-dark: white;
+
+    /*Inputs*/
+    --search-border-color: var(--yellow-primary);
     --button-color: var(--yellow-primary);
     --checkbox-color: var(--yellow-primary);
     --input-border-color: var(--yellow-primary);
@@ -19,10 +22,17 @@
     --youtube-color: #F70000;
     --twitch-color: #8C45F7;
 
+    /*Admin*/
+    --admin-top-nav-color: black;
+    --admin-left-nav-color: #fdfdfd;
 }
 
 ul{
     list-style-type: none;
+}
+
+.text-on-dark{
+    color: var(--text-color-on-dark);
 }
 
 .profile-img{
@@ -166,6 +176,7 @@ ul{
 .cf-button-small{
     padding: 5px;
     min-width: 75px;
+    max-height: 30px;
     font-size: 12px;
 }
 
@@ -283,3 +294,8 @@ ul{
 }
 
 /*#endregion*/
+
+/*#region Bootstrap extensions*/
+.position-fixed{
+    position: fixed;
+}
