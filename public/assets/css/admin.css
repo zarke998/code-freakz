@@ -4,18 +4,34 @@ body{
 
 .admin-top-nav{
     background-color: var(--admin-top-nav-color);
+    min-height: 75px;
 }
 .admin-left-nav{
+    position: fixed;
     width: 250px;
     height: 100%;
     padding: 20px 0px;
-
+    z-index: 1;
     background-color: white;
 }
 
 .admin-left-nav h2{
     font-size: 22px;
 }
+.admin-left-nav>div{
+    z-index: 1;
+}
+#left-nav-expand-btn{
+    display: none;
+    font-size: 22px;
+
+    color: white;
+}
+#left-nav-expand-btn:hover{
+    cursor: pointer;
+    user-select: none;
+}
+
 
 /*#region Control panel*/
 .admin-control-panel li:first-child a{
@@ -38,4 +54,36 @@ body{
     font-size:18px;
     margin-right: 10px;
 }
+/*#endregion*/
+
+.content-section button{
+    width: 150px !important;
+}
+
+
+/*#region MEDIA QUERIES*/
+@media screen and (max-width: 780px){
+    #left-nav-expand-btn{
+        display: inline-block;
+    }
+    .admin-left-nav{
+        left: -250px;
+    }
+    .admin-page-content{
+        padding-left: 0px !important;
+    }
+    .logo{
+        display: none;
+    }
+}
+
+/*@media screen and (max-width: 390px){
+    .logo{
+        display: none;
+    }
+
+    .admin-top-nav>div{
+        justify-content: flex-end !important;
+    }
+}*/
 /*#endregion*/

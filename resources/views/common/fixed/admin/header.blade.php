@@ -1,7 +1,8 @@
 <body>
     <div class="row position-fixed fixed-top admin-top-nav p-2">
         <div class="col-12 d-flex justify-content-between align-items-center pl-4">
-            <img width="150" src="{{ asset("assets/images/logo-white.png") }}" alt="img"/>
+            <i id="left-nav-expand-btn" class="lni lni-menu"></i>
+            <img class="logo" width="150" src="{{ asset("assets/images/logo-white.png") }}" alt="img"/>
             <div class="d-flex align-items-center">
                 <a href="#" class="cf-button cf-button-small mr-2">Logout</a>
                 <div class="d-flex align-items-center">
