@@ -53,3 +53,6 @@ Route::get("/about", function (){
 Route::get("/admin/content", function(){
     return view("pages.admin.content");
 });
+Route::get("/admin/logs", function(){
+    return view("pages.admin.logs");
+});
