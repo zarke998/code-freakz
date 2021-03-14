@@ -37,13 +37,16 @@ Route::get("/product_single", function(){
     return view("pages.product_single");
 });
 
-Route::get("/login", function (){
-    return view("pages.login");
-});
+/* #region Account routes */
+Route::get("/login", [\App\Http\Controllers\AccountController::class, "loginPage"])->name("loginPage");
+Route::post("/login", [\App\Http\Controllers\AccountController::class, "login"])->name("login");
 
-Route::get("/register", function (){
-    return view("pages.register");
-});
+Route::get("/register", [\App\Http\Controllers\AccountController::class, "registerPage"])->name("registerPage");
+Route::post("/register", [\App\Http\Controllers\AccountController::class, "register"])->name("register");
+
+Route::get("/logout", [\App\Http\Controllers\AccountController::class, "logout"]);
+/* #endregion */
+
 
 Route::get("/about", function (){
     return view("pages.about");
@@ -56,3 +59,5 @@ Route::get("/admin/content", function(){
 Route::get("/admin/logs", function(){
     return view("pages.admin.logs");
 });
+
+Route::get("/test", [\App\Http\Controllers\TestController::class, "test"]);
