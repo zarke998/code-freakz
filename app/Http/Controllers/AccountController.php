@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\RegisterRequest;
+use App\Http\Requests\LoginRequest;
 use Illuminate\Http\Request;
 use App\Models\User;
 
@@ -12,7 +13,15 @@ class AccountController extends Controller
         return view("pages.login");
     }
     public function login(LoginRequest $request){
+        $user = User::all()->where("email", "=", $request->email)->first();
 
+        if(!password_verify($request->password, $user->password)){
+            return redirect()->route("loginPage")->with("loginErrorMsg", "Password incorrect.")->withInput();
+        }
+        else{
+            session()->put("user", $user);
+            return redirect()->route("home");
+        }
     }
 
     public function registerPage(){

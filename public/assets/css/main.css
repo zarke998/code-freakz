@@ -98,6 +98,9 @@ ul{
     list-style-type: circle;
     color: var(--error-msg-color);
 }
+.error-msg{
+    color: var(--error-msg-color);
+}
 
 /*#region Social icons*/
 
