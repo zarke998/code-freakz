@@ -6,6 +6,7 @@ use App\Http\Requests\RegisterRequest;
 use App\Http\Requests\LoginRequest;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Role;
 
 class AccountController extends Controller
 {
@@ -31,6 +32,9 @@ class AccountController extends Controller
         $user = new User($request->except("password"));
         $user->password = password_hash($request->password, PASSWORD_DEFAULT);
         $user->activation_key = $this->generateActivationKey(64);
+
+        $userRoleId = Role::all()->where("name","=","user")->first()->id;
+        $user->role_id = $userRoleId;
 
         $user->save();
 
