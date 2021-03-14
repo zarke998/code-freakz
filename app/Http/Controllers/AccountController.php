@@ -38,6 +38,8 @@ class AccountController extends Controller
     }
 
     public function logout(){
+        session()->remove("user");
+        return redirect()->route("home");
     }
 
     private function generateActivationKey($length){

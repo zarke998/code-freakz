@@ -44,7 +44,7 @@ Route::post("/login", [\App\Http\Controllers\AccountController::class, "login"])
 Route::get("/register", [\App\Http\Controllers\AccountController::class, "registerPage"])->name("registerPage");
 Route::post("/register", [\App\Http\Controllers\AccountController::class, "register"])->name("register");
 
-Route::get("/logout", [\App\Http\Controllers\AccountController::class, "logout"]);
+Route::get("/logout", [\App\Http\Controllers\AccountController::class, "logout"])->name("logout");
 /* #endregion */
 
 

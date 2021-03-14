@@ -1,8 +1,12 @@
 <body class="@yield("body-classes")">
 <div class="container-fluid account-bar pr-md-4 pr-lg-5">
     <div class="d-flex justify-content-end">
-        <a href="{{ route("registerPage") }}" class="cf-button cf-button-small">Register</a>
-        <a href="{{ route("loginPage") }}" class="cf-button cf-button-small ml-2">Login</a>
+        @if(session("user"))
+            <a href="{{ route("logout") }}" class="cf-button cf-button-small">Logout</a>
+        @else
+            <a href="{{ route("registerPage") }}" class="cf-button cf-button-small">Register</a>
+            <a href="{{ route("loginPage") }}" class="cf-button cf-button-small ml-2">Login</a>
+        @endif
     </div>
 </div>
 <div class="container-fluid fh5co_header_bg">
