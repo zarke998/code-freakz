@@ -2,6 +2,12 @@
 <div class="container-fluid account-bar pr-md-4 pr-lg-5">
     <div class="d-flex justify-content-end">
         @if(session("user"))
+            @if(session("user")->role->name == "admin")
+                <a href="{{ route("contentPage") }}" class="admin-panel-link mr-4">
+                    <span>Admin panel</span>
+                    <i class="lni lni-layout admin-panel-icon"></i>
+                </a>
+            @endif
             <a href="{{ route("logout") }}" class="cf-button cf-button-small">Logout</a>
         @else
             <a href="{{ route("registerPage") }}" class="cf-button cf-button-small">Register</a>

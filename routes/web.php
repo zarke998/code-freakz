@@ -53,11 +53,7 @@ Route::get("/about", function (){
 });
 
 // Admin
-Route::get("/admin/content", function(){
-    return view("pages.admin.content");
-});
-Route::get("/admin/logs", function(){
-    return view("pages.admin.logs");
-});
+Route::get("/admin/content", [\App\Http\Controllers\AdminPanelController::class, "contentPage"])->name("contentPage");
+Route::get("/admin/logs", [\App\Http\Controllers\AdminPanelController::class, "logsPage"])->name("logsPage");
 
 Route::get("/test", [\App\Http\Controllers\TestController::class, "test"]);

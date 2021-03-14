@@ -2,6 +2,7 @@
     --yellow-primary: #F5BC04;
     --link-color: black;
     --link-hover-color: var(--yellow-primary);
+    --link-color-light: white;
     --language-tag-attached-color: white;
     --account-bar-color: black;
     --text-color-on-dark: white;
@@ -101,6 +102,28 @@ ul{
 .error-msg{
     color: var(--error-msg-color);
 }
+
+/*#region Admin panel btn*/
+.admin-panel-link{
+    display: flex;
+    align-items: center;
+    color: var(--link-color-light);
+}
+.admin-panel-link:hover{
+    text-decoration: none;
+    color: var(--yellow-primary);
+}
+.admin-panel-link:focus{
+    color: var(--yellow-primary);
+    text-decoration: none;
+}
+.admin-panel-link span{
+    margin-right: 15px;
+}
+.admin-panel-icon{
+    font-size: 24px;
+}
+/*#endregion*/
 
 /*#region Social icons*/
 
