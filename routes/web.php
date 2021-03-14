@@ -56,3 +56,6 @@ Route::get("/admin/content", function(){
 Route::get("/admin/logs", function(){
     return view("pages.admin.logs");
 });
+
+// Test
+Route::get("/test", [\App\Http\Controllers\TestController::class, "test"]);
