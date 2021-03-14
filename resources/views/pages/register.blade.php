@@ -14,10 +14,10 @@
                     <form action="{{ route("register") }}" method="POST">
                         @csrf
                         <div class="input-group mb-3">
-                            <input type="text" name="name" class="form-control cf-input" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                            <input type="text" name="name" class="form-control cf-input" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" value="{{ old("name") }}">
                         </div>
                         <div class="input-group mb-3">
-                            <input type="text" name="email" class="form-control cf-input" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1">
+                            <input type="text" name="email" class="form-control cf-input" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1" value="{{ old("email") }}">
                         </div>
                         <div class="input-group mb-3">
                             <input type="password" name="password" class="form-control cf-input" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
