@@ -14,7 +14,7 @@ class AccountController extends Controller
         return view("pages.login");
     }
     public function login(LoginRequest $request){
-        $user = User::all()->where("email", "=", $request->email)->first();
+        $user = User::with("role")->where("email", "=", $request->email)->first();
 
         if(!password_verify($request->password, $user->password)){
             return redirect()->route("loginPage")->with("loginErrorMsg", "Password incorrect.")->withInput();
