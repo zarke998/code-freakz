@@ -40,7 +40,7 @@
             <div class="d-flex justify-content-center align-items-center flex-wrap">
                 <div class="d-flex align-items-center mb-3 mx-4">
                     {{--                    <span class="mr-3 d-block">Add course</span>--}}
-                    <button type="button" class="w-100 cf-button">Add Course</button>
+                    <a href="{{ route("course.create") }}" class="w-100 cf-button px-5">Add Course</a>
                 </div>
             </div>
         </div>
