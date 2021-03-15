@@ -49,6 +49,12 @@ body{
     width: 125px;
 }
 
+.table-actions i{
+    font-size: 20px;
+}
+.table-actions a{
+}
+
 /*#region Control panel*/
 .admin-control-panel li:first-child a{
     /*border-top: 1px solid black;*/
