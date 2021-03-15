@@ -26,14 +26,22 @@ Route::get('/courses/edit', function () {
 });
 Route::get('/courses/create', [\App\Http\Controllers\CourseController::class, "create"])->name("course.create");
 //endregion
+
 //region Authors
 Route::get("/authors/create", [\App\Http\Controllers\AuthorController::class, "create"])->name("authors.create");
 Route::post("/authors/store", [\App\Http\Controllers\AuthorController::class, "store"])->name("authors.store");
 //endregion
+
 //region Languages
 Route::get("/languages/create", [\App\Http\Controllers\LanguageController::class, "create"])->name("languages.create");
 Route::post("/languages/store", [\App\Http\Controllers\LanguageController::class, "store"])->name("languages.store");
 //endregion
+
+//region Categories
+Route::get("/categories/create", [\App\Http\Controllers\CategoryController::class, "create"])->name("categories.create");
+Route::post("/categories/store", [\App\Http\Controllers\CategoryController::class, "store"])->name("categories.store");
+//endregion
+
 Route::get('/contact', function () {
     return view('pages.contact');
 });
@@ -49,12 +57,11 @@ Route::get("/about", function (){
 //region Account routes
 Route::get("/login", [\App\Http\Controllers\AccountController::class, "loginPage"])->name("loginPage");
 Route::post("/login", [\App\Http\Controllers\AccountController::class, "login"])->name("login");
-
 Route::get("/register", [\App\Http\Controllers\AccountController::class, "registerPage"])->name("registerPage");
 Route::post("/register", [\App\Http\Controllers\AccountController::class, "register"])->name("register");
-
 Route::get("/logout", [\App\Http\Controllers\AccountController::class, "logout"])->name("logout");
 //endregion
+
 //region Admin
 Route::get("/admin/content/courses", [\App\Http\Controllers\AdminPanelController::class, "coursesPage"])->name("admin.coursesPage");
 Route::get("/admin/content/authors", [\App\Http\Controllers\AdminPanelController::class, "authorsPage"])->name("admin.authorsPage");

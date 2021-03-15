@@ -28,6 +28,10 @@ class AdminPanelController extends Controller
     public function languagesPage(){
         return view("pages.admin.content.languages", $this->data);
     }
+    public function categoriesPage(){
+        return view("pages.admin.content.categories", $this->data);
+    }
+
     public function logsPage(){
         return view("pages.admin.logs");
     }
