@@ -30,6 +30,10 @@ Route::get('/courses/create', [\App\Http\Controllers\CourseController::class, "c
 Route::get("/authors/create", [\App\Http\Controllers\AuthorController::class, "create"])->name("authors.create");
 Route::post("/authors/store", [\App\Http\Controllers\AuthorController::class, "store"])->name("authors.store");
 //endregion
+//region Languages
+Route::get("/languages/create", [\App\Http\Controllers\LanguageController::class, "create"])->name("languages.create");
+Route::post("/languages/store", [\App\Http\Controllers\LanguageController::class, "store"])->name("languages.store");
+//endregion
 Route::get('/contact', function () {
     return view('pages.contact');
 });

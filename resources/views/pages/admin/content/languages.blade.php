@@ -40,7 +40,7 @@
             <div class="d-flex justify-content-center align-items-center flex-wrap">
                 <div class="d-flex align-items-center mb-3 mx-4">
                     {{--                    <span class="mr-3 d-block">Add course</span>--}}
-{{--                    <a href="{{ route("languages.create") }}" class="w-100 cf-button px-5">Add Author</a>--}}
+                    <a href="{{ route("languages.create") }}" class="w-100 cf-button px-5">Add Language</a>
                 </div>
             </div>
             @if(session("entityCreateMsg"))
