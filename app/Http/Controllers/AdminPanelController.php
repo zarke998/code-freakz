@@ -25,7 +25,9 @@ class AdminPanelController extends Controller
     public function authorsPage(){
         return view("pages.admin.content.authors", $this->data);
     }
-
+    public function languagesPage(){
+        return view("pages.admin.content.languages", $this->data);
+    }
     public function logsPage(){
         return view("pages.admin.logs");
     }
