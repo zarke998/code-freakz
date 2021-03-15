@@ -4,7 +4,7 @@
             <i id="left-nav-expand-btn" class="lni lni-menu"></i>
             <img class="logo" width="150" src="{{ asset("assets/images/logo-white.png") }}" alt="img"/>
             <div class="d-flex align-items-center">
-                <a href="#" class="cf-button cf-button-small mr-2">Logout</a>
+                <a href="{{ route("logout") }}" class="cf-button cf-button-small mr-2">Logout</a>
                 <div class="d-flex align-items-center">
                     <span class="mx-2 text-on-dark admin-name"> Andrej Zarkovski</span>
                     <img class="profile-img fh5co_verticle_middle"
