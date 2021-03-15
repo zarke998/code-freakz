@@ -16,7 +16,16 @@
     <div class="admin-left-nav position-fixed">
         <h2 class="my-3 mb-4 text-center">Control panel</h2>
         <ul class="my-3 px-0 admin-control-panel">
-            <li><a href="#"><i class="lni lni-library"></i>Content managment</a></li>
-            <li><a href="#"><i class="lni lni-text-align-left"></i>Logs</a></li>
+            @foreach($menu_grouped as $group)
+                <li><a href="@if($group[0]->route != "") {{ route($group[0]->route) }} @endif"><i class="lni lni-library"></i>{{ $group[0]->name }}</a></li>
+
+                <ul class="pl-0">
+                @foreach($group as $sub_item)
+                    @if($loop->first) @continue @endif
+                    <li class="pl-5"><a href="{{ route($sub_item->route) }}">{{ $sub_item->name }}</a></li>
+                @endforeach
+                </ul>
+
+            @endforeach
         </ul>
     </div>

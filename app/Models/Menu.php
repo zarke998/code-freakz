@@ -10,4 +10,8 @@ class Menu extends Model
     use HasFactory;
 
     protected $table = "menus";
+
+    public function items(){
+        return $this->hasMany(MenuItem::class);
+    }
 }

@@ -3,7 +3,7 @@
     <div class="d-flex justify-content-end">
         @if(session("user"))
             @if(session("user")->role->name == "admin")
-                <a href="{{ route("contentPage") }}" class="admin-panel-link mr-4">
+                <a href="{{ route("admin.coursesPage") }}" class="admin-panel-link mr-4">
                     <span>Admin panel</span>
                     <i class="lni lni-layout admin-panel-icon"></i>
                 </a>
