@@ -22,8 +22,8 @@ class AdminPanelController extends Controller
         return view("pages.admin.content.courses", $this->data);
     }
 
-    public function contentPage(){
-        return view("pages.admin.content");
+    public function authorsPage(){
+        return view("pages.admin.content.authors", $this->data);
     }
 
     public function logsPage(){

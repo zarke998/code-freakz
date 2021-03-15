@@ -26,7 +26,10 @@ Route::get('/courses/edit', function () {
 });
 Route::get('/courses/create', [\App\Http\Controllers\CourseController::class, "create"])->name("course.create");
 //endregion
-
+//region Authors
+Route::get("/authors/create", [\App\Http\Controllers\AuthorController::class, "create"])->name("authors.create");
+Route::post("/authors/store", [\App\Http\Controllers\AuthorController::class, "store"])->name("authors.store");
+//endregion
 Route::get('/contact', function () {
     return view('pages.contact');
 });
