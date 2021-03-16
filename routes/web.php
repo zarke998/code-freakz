@@ -26,6 +26,10 @@ Route::get('/courses/edit', function () {
 });
 Route::get('/courses/create', [\App\Http\Controllers\CourseController::class, "create"])->name("course.create");
 Route::post('/courses/store', [\App\Http\Controllers\CourseController::class, "store"])->name("course.store");
+Route::get('/courses/edit/{id}', [\App\Http\Controllers\CourseController::class, "edit"])->name("course.edit")
+    ->whereNumber("id");
+Route::post('/courses/update/{id}', [\App\Http\Controllers\CourseController::class, "update"])->name("course.update");
+
 Route::get('/courses/pagination', [\App\Http\Controllers\CourseController::class, "paginate"])->name("course.paginate");
 //endregion
 

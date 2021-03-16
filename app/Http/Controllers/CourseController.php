@@ -56,11 +56,10 @@ class CourseController extends Controller
         $course->languages()->sync($request->input("language_id"));
 
         //Save image
-        $new_image_name = md5($request->file("image")->getFilename()) . time() . "." . $request->file("image")->extension();
-        Storage::disk("public")->put("images/", $request->file("image"));
+//        $new_image_name = md5($request->file("image")->getFilename()) . time() . "." . $request->file("image")->extension();
+        $src = Storage::disk("public")->put("images/", $request->file("image"));
 
-        Image::create(["src" => $new_image_name, "course_id" => $course->id]);
-
+        Image::create(["src" => $src, "course_id" => $course->id]);
 
         return redirect()->route("admin.coursesPage")->with("entityInsertMsg", "Course added successfully.");
     }
@@ -84,7 +83,15 @@ class CourseController extends Controller
      */
     public function edit($id)
     {
+        $course = Course::with("images")->where("id", "=", $id)->first();
+        $this->data["authors"] = Author::all();
+        $this->data["categories"] = Category::all();
+        $this->data["difficulties"] = Difficulty::all();
+        $this->data["languages"] = Language::all();
 
+        $this->data["course"] = $course;
+
+        return view("pages.courses.edit", $this->data);
     }
 
     /**
@@ -96,7 +103,23 @@ class CourseController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $course = Course::find($id);
+        $course->fill($request->except(["_token", "language_id", "image"]));
+
+        $course->save();
+
+        $course->languages()->sync($request->input("language_id"));
+
+        if($request->has("image")){
+            Storage::disk("public")->delete($course->images[0]->src);
+            Image::where("course_id","=", $course->id)->delete();
+
+            $src = Storage::disk("public")->put("images/", $request->file("image"));
+
+            Image::create(["src" => $src, "course_id" => $course->id]);
+        }
+
+        return redirect()->route("admin.coursesPage")->with("entityInsertMsg", "Course updated successfully.");
     }
 
     /**
