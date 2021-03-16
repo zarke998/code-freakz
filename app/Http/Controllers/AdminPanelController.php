@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Author;
 use App\Models\Course;
 use App\Models\Menu;
 use App\Models\MenuItem;
@@ -27,6 +28,10 @@ class AdminPanelController extends Controller
     }
 
     public function authorsPage(){
+
+        $authors = Author::all();
+        $this->data["authors"] = $authors;
+
         return view("pages.admin.content.authors", $this->data);
     }
     public function languagesPage(){
