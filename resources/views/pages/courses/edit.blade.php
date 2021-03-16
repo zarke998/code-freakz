@@ -1,6 +1,6 @@
 @extends("common.layouts.layout")
 
-@section("title") CodeFreakz | Course Create @endsection
+@section("title") CodeFreakz | Course Edit @endsection
 
 @section("scripts")
     <script src="{{ asset("assets/js/course_create.js") }}"></script>
@@ -9,7 +9,7 @@
 @section("content")
     <div class="row mx-0 mb-5">
         <div class="col-12">
-            <h1 class="text-center py-4">Create</h1>
+            <h1 class="text-center py-4">Edit</h1>
         </div>
         <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3">
             <div class="row">
