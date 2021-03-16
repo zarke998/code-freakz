@@ -42,6 +42,10 @@
                             <input type="text" class="form-control cf-input" name="price" placeholder="Price ($)"
                                    aria-label="Email" aria-describedby="basic-addon1" value="{{ old("price") }}">
                         </div>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control cf-input" name="discount" placeholder="Discount in %"
+                                   aria-label="Email" aria-describedby="basic-addon1" value="{{ old("discount") }}">
+                        </div>
                         <div class="mb-4">
                             <p class="cf-text-medium text-center mb-2">Category</p>
                             <select class="form-control cf-input cf-select" name="category_id" placeholder="Category"
