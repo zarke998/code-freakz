@@ -28,7 +28,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-3 fh5co_padding_menu">
-                <img width="250" src="{{ asset("assets/images/logo.jpg") }}" alt="img"/>
+                <a href="{{ route("home") }}"><img width="250" src="{{ asset("assets/images/logo.jpg") }}" alt="img"/></a>
             </div>
             <div class="col-12 col-md-9 align-self-center justify-content-end align-items-center d-none d-md-flex">
                 <div class="d-none d-lg-flex">
