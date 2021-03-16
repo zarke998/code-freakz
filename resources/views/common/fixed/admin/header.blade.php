@@ -18,7 +18,6 @@
         <ul class="my-3 px-0 admin-control-panel">
             @foreach($menu_grouped as $group)
                 <li><a class="@if(Route::is($group[0]->route)) admin-control-panel-selected @endif" href="@if($group[0]->route != "") {{ route($group[0]->route) }} @endif"><i class="lni lni-library"></i>{{ $group[0]->name }}</a></li>
-
                 <ul class="pl-0">
                 @foreach($group as $sub_item)
                     @if($loop->first) @continue @endif

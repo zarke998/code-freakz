@@ -62,10 +62,6 @@
                         </a>
                     </div>
                 </div>
-                <div class="profile d-inline-block">
-                    <img class="profile-img fh5co_verticle_middle" src="{{ asset("assets/images/profile-default.png") }}" alt="Profile deafult"/>
-                    {{--                    <div class="fh5co_verticle_middle"><i class="fas fa-user-circle"></i></div>--}}
-                </div>
                 <!--<div class="d-inline-block text-center"><img src="images/country.png" alt="img" class="fh5co_country_width"/></div>-->
                 <div class="clearfix"></div>
             </div>
@@ -95,43 +91,11 @@
             </div>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="home.blade.php">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="#">Blog <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="../../../../../24%20News%20Free%20Website%20Template%20-%20Free-CSS.com/24-news/single.html">Single <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton2" data-toggle="dropdown"
-                           aria-haspopup="true" aria-expanded="false">World <span class="sr-only">(current)</span></a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink_1">
-                            <a class="dropdown-item" href="#">Action in</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton3" data-toggle="dropdown"
-                           aria-haspopup="true" aria-expanded="false">Community<span class="sr-only">(current)</span></a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink_1">
-                            <a class="dropdown-item" href="#">Action in</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="../../../../../24%20News%20Free%20Website%20Template%20-%20Free-CSS.com/24-news/Contact_us.html">Contact <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item d-md-none d-block">
-                        <div class="profile d-flex justify-content-between nav-link">
-                            <div>Account</div>
-                            <img class="profile-img fh5co_verticle_middle" src="{{ asset("assets/images/profile-default.png") }}" alt="Profile deafult"/>
-                            {{--                    <div class="fh5co_verticle_middle"><i class="fas fa-user-circle"></i></div>--}}
-                        </div>
-                    </li>
+                    @foreach($header_menu as $menu_item)
+                        <li class="nav-item @if( Route::is($menu_item->route) ) active @endif">
+                            <a class="nav-link" href="{{ route($menu_item->route) }}">{{ $menu_item->name }} <span class="sr-only">(current)</span></a>
+                        </li>
+                    @endforeach
                 </ul>
             </div>
         </nav>

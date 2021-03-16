@@ -2,17 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('pages.home');
-})->name("home");
+Route::get('/',[\App\Http\Controllers\HomeController::class, "index"])->name("home");
 
 //region Courses
-Route::get('/courses', function () {
-    return view('pages.courses.index');
-});
-Route::get('/courses/edit', function () {
-    return view('pages.courses.edit');
-});
+Route::get('/courses', [\App\Http\Controllers\CourseController::class, "index"])->name("courses");
 Route::get('/courses/create', [\App\Http\Controllers\CourseController::class, "create"])->name("course.create");
 Route::post('/courses/store', [\App\Http\Controllers\CourseController::class, "store"])->name("course.store");
 Route::get('/courses/edit/{id}', [\App\Http\Controllers\CourseController::class, "edit"])->name("course.edit")
@@ -57,17 +50,8 @@ Route::delete("/categories/delete/{id}", [\App\Http\Controllers\CategoryControll
     ->whereNumber("id");
 //endregion
 
-Route::get('/contact', function () {
-    return view('pages.contact');
-});
-
-Route::get("/product_single", function(){
-    return view("pages.product_single");
-});
-
-Route::get("/about", function (){
-    return view("pages.about");
-});
+Route::get('/contact', [\App\Http\Controllers\ContactController::class, "index"])->name("contact");
+Route::get('/about', [\App\Http\Controllers\AboutController::class, "index"])->name("about");
 
 //region Account routes
 Route::get("/login", [\App\Http\Controllers\AccountController::class, "loginPage"])->name("loginPage");

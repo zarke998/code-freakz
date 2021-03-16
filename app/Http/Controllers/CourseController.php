@@ -13,9 +13,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use SebastianBergmann\Diff\Diff;
 
-class CourseController extends Controller
+class CourseController extends FrontendController
 {
-    private $data = [];
 
     /**
      * Display a listing of the resource.
@@ -24,7 +23,7 @@ class CourseController extends Controller
      */
     public function index()
     {
-
+        return view("pages.courses.index", $this->data);
     }
 
     /**
