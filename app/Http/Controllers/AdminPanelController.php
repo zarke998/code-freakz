@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Author;
+use App\Models\Category;
 use App\Models\Course;
 use App\Models\Language;
 use App\Models\Menu;
@@ -41,6 +42,9 @@ class AdminPanelController extends Controller
         return view("pages.admin.content.languages", $this->data);
     }
     public function categoriesPage(){
+        $categories = Category::all();
+        $this->data["categories"] = $categories;
+
         return view("pages.admin.content.categories", $this->data);
     }
 
