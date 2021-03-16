@@ -38,6 +38,12 @@ Route::get('/courses/pagination', [\App\Http\Controllers\CourseController::class
 //region Authors
 Route::get("/authors/create", [\App\Http\Controllers\AuthorController::class, "create"])->name("authors.create");
 Route::post("/authors/store", [\App\Http\Controllers\AuthorController::class, "store"])->name("authors.store");
+Route::get("/authors/edit/{id}", [\App\Http\Controllers\AuthorController::class, "edit"])->name("authors.edit")
+    ->whereNumber("id");
+Route::post("/authors/update/{id}", [\App\Http\Controllers\AuthorController::class, "update"])->name("authors.update")
+    ->whereNumber("id");
+Route::delete("/authors/delete/{id}", [\App\Http\Controllers\AuthorController::class, "destroy"])->name("authors.delete")
+    ->whereNumber("id");
 //endregion
 
 //region Languages

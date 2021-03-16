@@ -25,8 +25,12 @@
                             <td>{{ $author->last_name }}</td>
                             <td>{{ $author->birth_date }}</td>
                             <td class="table-actions d-flex justify-content-center">
-                                <a href="#" class="cf-link"><i class="lni lni-pencil"></i></a>
-                                <a href="#" class="cf-link ml-3"><i class="lni lni-trash"></i></a>
+                                <a href="{{ route("authors.edit", ["id" => $author->id]) }}" class="cf-link"><i class="lni lni-pencil"></i></a>
+                                <form action="{{ route("authors.delete", ["id" => $author->id]) }}" method="POST">
+                                    @method("DELETE")
+                                    @csrf
+                                    <button type="submit" class="cf-link ml-3 cf-table-button"><i class="lni lni-trash"></i></button>
+                                </form>
                             </td>
                         </tr>
                     @endforeach
@@ -39,9 +43,14 @@
                     <a href="{{ route("authors.create") }}" class="w-100 cf-button px-5">Add Author</a>
                 </div>
             </div>
-            @if(session("authorCreateMsg"))
+            @if(session("entityCreateMsg"))
                 <div class="success-msg">
-                    {{ session("authorCreateMsg") }}
+                    {{ session("entityCreateMsg") }}
+                </div>
+            @endif
+            @if(session("entityErrorMsg"))
+                <div class="error-msg">
+                    {{ session("entityErrorMsg") }}
                 </div>
             @endif
         </div>

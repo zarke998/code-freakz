@@ -184,6 +184,15 @@ ul{
     color: var(--link-hover-color);
 }
 
+.content-section .cf-table-button{
+    background: none;
+    border: none;
+    width: 50px !important;
+}
+.cf-table-button:hover{
+    cursor: pointer;
+}
+
 /*#region CF INPUTS*/
 .cf-input:focus{
     border-color: var(--input-border-color);

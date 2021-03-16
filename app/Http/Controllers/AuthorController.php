@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Author;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 
 class AuthorController extends Controller
@@ -59,7 +60,9 @@ class AuthorController extends Controller
      */
     public function edit($id)
     {
-        return view("pages.authors.edit");
+        $author = Author::find($id);
+
+        return view("pages.authors.edit", ["author" => $author]);
     }
 
     /**
@@ -71,7 +74,12 @@ class AuthorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $author = Author::find($id);
+        $author->fill($request->except("_token"));
+
+        $author->save();
+
+        return redirect()->route("admin.authorsPage")->with(["entityCreateMsg" => "Author updated successfully"]);
     }
 
     /**
@@ -82,6 +90,12 @@ class AuthorController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try{
+            Author::destroy($id);
+            return redirect()->back();
+        }
+        catch (QueryException $e){
+            return redirect()->back()->with(["entityErrorMsg" => "Error deleting author. Please delete all correlated courses first."]);
+        }
     }
 }
