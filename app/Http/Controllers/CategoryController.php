@@ -3,11 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Category\CategoryCreateRequest;
+use App\Http\Requests\Category\CategoryUpdateRequest;
 use App\Models\Category;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
+    private $data = [];
+
     /**
      * Display a listing of the resource.
      *
@@ -60,7 +64,11 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $category = Category::find($id);
+
+        $this->data["category"] = $category;
+
+        return view("pages.categories.edit", ["category" => $category]);
     }
 
     /**
@@ -70,9 +78,15 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CategoryUpdateRequest $request, $id)
     {
-        //
+        $category = Category::find($id);
+
+        $category->fill($request->except("_token"));
+
+        $category->save();
+
+        return redirect()->route("admin.categoriesPage")->with("entityCreateMsg", "Category updated successfully.");
     }
 
     /**
@@ -83,6 +97,13 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try{
+            Category::destroy($id);
+
+            return redirect()->back();
+        }
+        catch (QueryException $exception){
+            return redirect()->back()->with(["entityErrorMsg" => "Error category language. Please delete courses which have this category first."]);
+        }
     }
 }

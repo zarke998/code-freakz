@@ -49,6 +49,12 @@ Route::delete("/languages/delete/{id}", [\App\Http\Controllers\LanguageControlle
 //region Categories
 Route::get("/categories/create", [\App\Http\Controllers\CategoryController::class, "create"])->name("categories.create");
 Route::post("/categories/store", [\App\Http\Controllers\CategoryController::class, "store"])->name("categories.store");
+Route::get("/categories/edit/{id}", [\App\Http\Controllers\CategoryController::class, "edit"])->name("categories.edit")
+    ->whereNumber("id");
+Route::post("/categories/update/{id}", [\App\Http\Controllers\CategoryController::class, "update"])->name("categories.update")
+    ->whereNumber("id");
+Route::delete("/categories/delete/{id}", [\App\Http\Controllers\CategoryController::class, "destroy"])->name("categories.delete")
+    ->whereNumber("id");
 //endregion
 
 Route::get('/contact', function () {
