@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
 use App\Models\Menu;
 use App\Models\MenuItem;
 use Illuminate\Http\Request;
@@ -19,6 +20,9 @@ class AdminPanelController extends Controller
     }
 
     public function coursesPage(){
+        $courses = Course::with("author")->simplePaginate(8);
+        $this->data["courses"] = $courses;
+
         return view("pages.admin.content.courses", $this->data);
     }
 

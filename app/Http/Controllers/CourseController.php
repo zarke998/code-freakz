@@ -24,7 +24,7 @@ class CourseController extends Controller
      */
     public function index()
     {
-        
+
     }
 
     /**
@@ -107,6 +107,27 @@ class CourseController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+    }
+
+    public function paginate(Request $request){
+        $per_page = 8;
+        $offset = 0;
+
+        if($request->has("per_page"))
+            $per_page = $request->input("per_page");
+
+        if($request->has("offset"))
+            $offset = $request->input("offset");
+
+        $data = [];
+
+        $courses_count = Course::all()->count();
+        $courses = Course::with("author")->skip($offset)->take($per_page)->get();
+
+        $data["courses_count"] = $courses_count;
+        $data["courses"] = $courses;
+
+        return response()->json($data);
     }
 }

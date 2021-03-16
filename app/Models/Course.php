@@ -20,4 +20,7 @@ class Course extends Model
     public function images(){
         return $this->hasMany(Image::class);
     }
+    public function author(){
+        return $this->belongsTo(Author::class);
+    }
 }

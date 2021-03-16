@@ -2,6 +2,10 @@
 
 @section("title") CodeFreakz | Admin - Courses @endsection
 
+@section("scripts")
+    <script src="{{ asset("assets/js/admin/course-page.js") }}"></script>
+@endsection
+
 @section("content")
     <div class="row content-container justify-content-center">
         <div class="content-section col-12 px-5 mb-2">
@@ -15,26 +19,27 @@
                     <th scope="col" class="d-flex justify-content-center">Actions</th>
                 </tr>
                 </thead>
-                <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td class="table-actions d-flex justify-content-center">
-                        <a href="#" class="cf-link"><i class="lni lni-pencil"></i></a>
-                        <a href="#" class="cf-link ml-3"><i class="lni lni-trash"></i></a>
-                    </td>
-                </tr>
+                <tbody id="courses-container">
+{{--                @foreach($courses as $course)--}}
+{{--                    <tr>--}}
+{{--                        <th scope="row">{{ $course->id }}</th>--}}
+{{--                        <td>{{ $course->name }}</td>--}}
+{{--                        <td>{{ $course->author->first_name . " " . $course->author->last_name }}</td>--}}
+{{--                        <td class="table-actions d-flex justify-content-center">--}}
+{{--                            <a href="#" class="cf-link"><i class="lni lni-pencil"></i></a>--}}
+{{--                            <a href="#" class="cf-link ml-3"><i class="lni lni-trash"></i></a>--}}
+{{--                        </td>--}}
+{{--                    </tr>--}}
+{{--                @endforeach--}}
                 </tbody>
             </table>
             <div class="row">
-                <div class="col-12 text-center pb-4 pt-4 pl-sm-4 pr-sm-4 pl-0 pr-0 d-flex flex-wrap justify-content-center">
-                    <a href="#" class="btn_mange_pagging mb-2"><i class="fa fa-long-arrow-left"></i><span class="d-lg-inline-block d-none"> Previous </span></a>
-                    <a href="#" class="btn_pagging mb-2">1</a>
-                    <a href="#" class="btn_pagging mb-2">2</a>
-                    <a href="#" class="btn_pagging mb-2">3</a>
-                    <a href="#" class="btn_pagging mb-2">...</a>
-                    <a href="#" class="btn_mange_pagging mb-2"><span class="d-lg-inline-block d-none">Next</span> <i class="fa fa-long-arrow-right"></i>&nbsp;&nbsp; </a>
+                <div class="col-12 text-center pb-4 pt-4 pl-sm-4 pr-sm-4 pl-0 pr-0 d-flex flex-wrap justify-content-between">
+                    <a href="#" class="course-page-btn btn_mange_pagging mb-2" data-inc="-1"><i class="fa fa-long-arrow-left"></i><span class="d-lg-inline-block d-none"> Previous </span></a>
+                    <a href="#" class="course-page-btn btn_mange_pagging mb-2" data-inc="1" >
+                        <span class="d-lg-inline-block d-none">Next</span>
+                        <i class="fa fa-long-arrow-right"></i>&nbsp;&nbsp;
+                    </a>
                 </div>
             </div>
             <div class="d-flex justify-content-center align-items-center flex-wrap">
