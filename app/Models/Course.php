@@ -10,4 +10,14 @@ class Course extends Model
     use HasFactory;
 
     protected $table = "courses";
+
+    protected $guarded = [];
+
+    public function languages(){
+        return $this->belongsToMany(Language::class);
+    }
+
+    public function images(){
+        return $this->hasMany(Image::class);
+    }
 }

@@ -25,6 +25,7 @@ Route::get('/courses/edit', function () {
     return view('pages.courses.edit');
 });
 Route::get('/courses/create', [\App\Http\Controllers\CourseController::class, "create"])->name("course.create");
+Route::post('/courses/store', [\App\Http\Controllers\CourseController::class, "store"])->name("course.store");
 //endregion
 
 //region Authors

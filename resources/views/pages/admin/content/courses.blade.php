@@ -43,6 +43,11 @@
                     <a href="{{ route("course.create") }}" class="w-100 cf-button px-5">Add Course</a>
                 </div>
             </div>
+            @if(session("entityInsertMsg"))
+                <div class="success-msg">
+                    {{ session("entityInsertMsg") }}
+                </div>
+            @endif
         </div>
 
     </div>

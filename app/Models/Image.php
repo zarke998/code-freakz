@@ -10,4 +10,8 @@ class Image extends Model
     use HasFactory;
 
     protected $table = "images";
+
+    protected $fillable = ["src","course_id"];
+
+    public $timestamps = false;
 }
