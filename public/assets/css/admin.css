@@ -55,6 +55,11 @@ body{
 .table-actions a{
 }
 
+.content-section>div{
+    max-height: 500px;
+    overflow-y: auto;
+}
+
 /*#region Control panel*/
 .admin-control-panel li:first-child a{
     /*border-top: 1px solid black;*/
