@@ -58,10 +58,35 @@ function displayCourses(courses) {
                         <td>${ course.author.first_name + " " + course.author.last_name}</td>
                         <td class="table-actions d-flex justify-content-center">
                             <a href="/courses/edit/${ course.id }" class="cf-link"><i class="lni lni-pencil"></i></a>
-                            <a href="/courses/remove/${ course.id}" class="cf-link ml-3"><i class="lni lni-trash"></i></a>
+                            <a href="/courses/delete/${ course.id}" class="cf-link ml-3 course-delete-btn"><i class="lni lni-trash"></i></a>
                         </td>
                     </tr>`;
     });
 
     $(coursesContainer).html(coursesHtml);
+
+    $(".course-delete-btn").click(deleteCourse);
+}
+
+function deleteCourse(e){
+    e.preventDefault();
+
+    let btn = this;
+
+    let deleteUrl = $(btn).attr("href");
+
+    $.ajax({
+        url: deleteUrl,
+        method: "DELETE",
+        data: {
+            "_token" : $('meta[name="csrf-token"]').attr('content')
+        },
+        success: function(data){
+            alert(data.msg);
+            location.reload();
+        },
+        error(xhr, textStatus, error){
+            alert(xhr.responseText);
+        }
+    });
 }

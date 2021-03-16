@@ -130,7 +130,16 @@ class CourseController extends Controller
      */
     public function destroy($id)
     {
+        $course = Course::find($id);
 
+        $course->languages()->sync([]);
+
+        Storage::disk("public")->delete($course->images[0]->src);
+        Image::where("course_id","=", $course->id)->delete();
+
+        $course->delete();
+
+        return response()->json(["msg" => "Course deleted successfully"]);
     }
 
     public function paginate(Request $request){

@@ -29,6 +29,8 @@ Route::post('/courses/store', [\App\Http\Controllers\CourseController::class, "s
 Route::get('/courses/edit/{id}', [\App\Http\Controllers\CourseController::class, "edit"])->name("course.edit")
     ->whereNumber("id");
 Route::post('/courses/update/{id}', [\App\Http\Controllers\CourseController::class, "update"])->name("course.update");
+Route::delete('/courses/delete/{id}', [\App\Http\Controllers\CourseController::class, "destroy"])->name("course.delete")
+    ->whereNumber("id");
 
 Route::get('/courses/pagination', [\App\Http\Controllers\CourseController::class, "paginate"])->name("course.paginate");
 //endregion
