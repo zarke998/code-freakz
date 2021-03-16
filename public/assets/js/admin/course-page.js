@@ -52,7 +52,7 @@ function displayCourses(courses) {
     let coursesHtml = ``;
 
     courses.forEach(function (course) {
-        coursesHtml = `<tr>
+        coursesHtml += `<tr>
                         <th scope="row">${ course.id }</th>
                         <td>${ course.name }</td>
                         <td>${ course.author.first_name + " " + course.author.last_name}</td>

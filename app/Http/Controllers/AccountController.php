@@ -24,7 +24,6 @@ class AccountController extends FrontendController
             return redirect()->route("home");
         }
     }
-
     public function registerPage(){
         return view("pages.register", $this->data);
     }
