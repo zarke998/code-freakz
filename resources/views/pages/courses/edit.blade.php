@@ -20,7 +20,8 @@
                             <input type="text" class="form-control cf-input" name="name" placeholder="Course name"
                                    aria-label="Email" aria-describedby="basic-addon1" value="{{ old("name") ? old("name") : $course->name }}" }}>
                         </div>
-                        <div class="input-group mb-3">
+                        <div class="mb-3">
+                            <span>Author</span>
                             <select class="form-control cf-input cf-select" name="author_id" placeholder="Author"
                                     aria-label="Author" aria-describedby="basic-addon1">
                                 @foreach($authors as $author)
@@ -29,7 +30,8 @@
                                 @endforeach
                             </select>
                         </div>
-                        <div class="input-group mb-3">
+                        <div class="mb-3">
+                            <span>Description</span>
                             <textarea name="description" placeholder="Description..."
                                       class="w-100 cf-text-area">{{ old("description") ? old("description") : $course->description }}</textarea>
                         </div>
@@ -38,11 +40,13 @@
                             <input type="date" class="form-control cf-input" name="release_date" placeholder="Release Date"
                                    aria-label="Email" aria-describedby="basic-addon1" value="{{ old("release_date") ? old("release_date") : $course->release_date  }}">
                         </div>
-                        <div class="input-group mb-3">
+                        <div class="mb-3">
+                            <span>Price ($)</span>
                             <input type="text" class="form-control cf-input" name="price" placeholder="Price ($)"
                                    aria-label="Email" aria-describedby="basic-addon1" value="{{ old("price") ? old("price") : $course->price}}">
                         </div>
-                        <div class="input-group mb-3">
+                        <div class="mb-3">
+                            <span>Discount (%)</span>
                             <input type="text" class="form-control cf-input" name="discount" placeholder="Discount in %)"
                                    aria-label="Email" aria-describedby="basic-addon1" value="{{ old("discount") ? old("discount") : $course->discount}}">
                         </div>
