@@ -8,9 +8,8 @@ use App\Models\Category;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 
-class CategoryController extends Controller
+class CategoryController extends FrontendController
 {
-    private $data = [];
 
     /**
      * Display a listing of the resource.
@@ -29,7 +28,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view("pages.categories.create");
+        return view("pages.categories.create", $this->data);
     }
 
     /**
@@ -68,7 +67,7 @@ class CategoryController extends Controller
 
         $this->data["category"] = $category;
 
-        return view("pages.categories.edit", ["category" => $category]);
+        return view("pages.categories.edit", $this->data);
     }
 
     /**

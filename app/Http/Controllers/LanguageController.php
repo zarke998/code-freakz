@@ -8,10 +8,8 @@ use App\Models\Language;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 
-class LanguageController extends Controller
+class LanguageController extends FrontendController
 {
-    private $data = [];
-
     /**
      * Display a listing of the resource.
      *
@@ -29,7 +27,7 @@ class LanguageController extends Controller
      */
     public function create()
     {
-        return view("pages.languages.create");
+        return view("pages.languages.create", $this->data);
     }
 
     /**

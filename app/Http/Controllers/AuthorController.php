@@ -6,7 +6,7 @@ use App\Models\Author;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 
-class AuthorController extends Controller
+class AuthorController extends FrontendController
 {
     /**
      * Display a listing of the resource.
@@ -25,7 +25,7 @@ class AuthorController extends Controller
      */
     public function create()
     {
-        return view("pages.authors.create");
+        return view("pages.authors.create", $this->data);
     }
 
     /**
@@ -61,8 +61,8 @@ class AuthorController extends Controller
     public function edit($id)
     {
         $author = Author::find($id);
-
-        return view("pages.authors.edit", ["author" => $author]);
+        $this->data["author"] = $author;
+        return view("pages.authors.edit",$this->data);
     }
 
     /**
