@@ -8,10 +8,10 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Role;
 
-class AccountController extends Controller
+class AccountController extends FrontendController
 {
     public function loginPage(){
-        return view("pages.login");
+        return view("pages.login", $this->data);
     }
     public function login(LoginRequest $request){
         $user = User::with("role")->where("email", "=", $request->email)->first();
@@ -26,7 +26,7 @@ class AccountController extends Controller
     }
 
     public function registerPage(){
-        return view("pages.register");
+        return view("pages.register", $this->data);
     }
     public function register(RegisterRequest $request){
         $user = new User($request->except("password"));
