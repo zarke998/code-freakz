@@ -3,11 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Language\LanguageCreateRequest;
+use App\Http\Requests\Language\LanguageUpdateRequest;
 use App\Models\Language;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 
 class LanguageController extends Controller
 {
+    private $data = [];
+
     /**
      * Display a listing of the resource.
      *
@@ -60,7 +64,11 @@ class LanguageController extends Controller
      */
     public function edit($id)
     {
-        //
+        $language = Language::find($id);
+
+        $this->data["language"] = $language;
+
+        return view("pages.languages.edit", $this->data);
     }
 
     /**
@@ -70,9 +78,15 @@ class LanguageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(LanguageUpdateRequest $request, $id)
     {
-        //
+        $language = Language::find($id);
+
+        $language->fill($request->except("_token"));
+
+        $language->save();
+
+        return redirect()->route("admin.languagesPage")->with("entityCreateMsg", "Language updated successfully.");
     }
 
     /**
@@ -83,6 +97,13 @@ class LanguageController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try{
+            Language::destroy($id);
+
+            return redirect()->back();
+        }
+        catch (QueryException $exception){
+            return redirect()->back()->with(["entityErrorMsg" => "Error deleting language. Please delete courses which have this langauge first."]);
+        }
     }
 }

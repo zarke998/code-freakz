@@ -2,17 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Route::get('/', function () {
     return view('pages.home');
 })->name("home");
@@ -49,6 +38,12 @@ Route::delete("/authors/delete/{id}", [\App\Http\Controllers\AuthorController::c
 //region Languages
 Route::get("/languages/create", [\App\Http\Controllers\LanguageController::class, "create"])->name("languages.create");
 Route::post("/languages/store", [\App\Http\Controllers\LanguageController::class, "store"])->name("languages.store");
+Route::get("/languages/edit/{id}", [\App\Http\Controllers\LanguageController::class, "edit"])->name("languages.edit")
+    ->whereNumber("id");
+Route::post("/languages/update/{id}", [\App\Http\Controllers\LanguageController::class, "update"])->name("languages.update")
+    ->whereNumber("id");
+Route::delete("/languages/delete/{id}", [\App\Http\Controllers\LanguageController::class, "destroy"])->name("languages.delete")
+    ->whereNumber("id");
 //endregion
 
 //region Categories
