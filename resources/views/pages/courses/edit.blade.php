@@ -25,7 +25,7 @@
                                     aria-label="Author" aria-describedby="basic-addon1">
                                 @foreach($authors as $author)
                                     <option
-                                        value="{{ $author->id }}">{{ $author->first_name . " " . $author->last_name }}</option>
+                                        value="{{ $author->id }}" @if($author->id == $course->author_id) selected @endif>{{ $author->first_name . " " . $author->last_name }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -47,7 +47,7 @@
                             <select class="form-control cf-input cf-select" name="category_id" placeholder="Category"
                                     aria-label="Author" aria-describedby="basic-addon1">
                                 @foreach($categories as $category)
-                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                    <option value="{{ $category->id }}" @if($category->id == $course->category_id) selected @endif>{{ $category->name }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -56,7 +56,7 @@
                             <select class="form-control cf-input cf-select" name="difficulty_id" placeholder="Category"
                                     aria-label="Author" aria-describedby="basic-addon1">
                                 @foreach($difficulties as $difficulty)
-                                    <option value="{{ $difficulty->id }}">{{ $difficulty->name }}</option>
+                                    <option value="{{ $difficulty->id }}" @if($difficulty->id == $course->difficulty_id) selected @endif>{{ $difficulty->name }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -67,7 +67,11 @@
                                     <div class="d-flex align-items-center cf-checkbox mr-3 mb-1">
                                         <div>
                                             <input type="checkbox" id="language{{ $loop->index }}" name="language_id[]"
-                                                   value="{{ $language->id }}"/>
+                                                   value="{{ $language->id }}"
+                                                    @if($course->languages->contains("id", $language->id))
+                                                        checked
+                                                    @endif
+                                                        />
                                             <i class="material-icons cf-checked">check_box</i>
                                             <i class="material-icons cf-unchecked">check_box_outline_blank</i>
                                         </div>
