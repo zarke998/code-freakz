@@ -1,6 +1,6 @@
 @extends("common.layouts.layout")
 
-@section("title") CodeFreakz | Category Create@endsection
+@section("title") CodeFreakz | Category Edit @endsection
 
 @section("content")
     <div class="row my-5">
