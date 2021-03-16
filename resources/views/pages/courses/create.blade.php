@@ -18,7 +18,7 @@
                         @csrf
                         <div class="input-group mb-3">
                             <input type="text" class="form-control cf-input" name="name" placeholder="Course name"
-                                   aria-label="Email" aria-describedby="basic-addon1">
+                                   aria-label="Email" aria-describedby="basic-addon1" value="{{ old("name") }}" }}>
                         </div>
                         <div class="input-group mb-3">
                             <select class="form-control cf-input cf-select" name="author_id" placeholder="Author"
@@ -31,16 +31,16 @@
                         </div>
                         <div class="input-group mb-3">
                             <textarea name="description" placeholder="Description..."
-                                      class="w-100 cf-text-area"></textarea>
+                                      class="w-100 cf-text-area">{{ old("description") }}</textarea>
                         </div>
                         <div class="mb-3">
                             <span>Release date</span>
                             <input type="date" class="form-control cf-input" name="release_date" placeholder="Release Date"
-                                   aria-label="Email" aria-describedby="basic-addon1">
+                                   aria-label="Email" aria-describedby="basic-addon1" value="{{ old("release_date") }}">
                         </div>
                         <div class="input-group mb-3">
                             <input type="text" class="form-control cf-input" name="price" placeholder="Price ($)"
-                                   aria-label="Email" aria-describedby="basic-addon1">
+                                   aria-label="Email" aria-describedby="basic-addon1" value="{{ old("price") }}">
                         </div>
                         <div class="mb-4">
                             <p class="cf-text-medium text-center mb-2">Category</p>
