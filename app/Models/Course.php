@@ -26,4 +26,9 @@ class Course extends Model
     public static function recommendedCourses(){
         return Course::with("images")->inRandomOrder()->take(5)->get();
     }
+
+    public static function topFiveDiscounted(){
+        return Course::with("images")->where("discount",">","0")
+            ->orderByDesc("discount")->take(5)->get();
+    }
 }

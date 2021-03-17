@@ -57,42 +57,18 @@
             <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4">On Discount</div>
         </div>
         <div class="owl-carousel owl-theme" id="slider2">
-            <div class="item px-2">
-                <div class="fh5co_hover_news_img">
-                    <div class="fh5co_news_img"><img src="{{ asset("assets/images/39-324x235.jpg") }}" alt=""/></div>
-                    <div>
-                        <a href="../../../../../24%20News%20Free%20Website%20Template%20-%20Free-CSS.com/24-news/single.html" class="d-block fh5co_small_post_heading"><span class="">The top 10 best computer speakers in the market</span></a>
-                        <div class="c_g"><i class="fa fa-clock-o"></i> Oct 16,2017</div>
+            @foreach($discounted_courses as $course)
+                <div class="item px-2">
+                    <div class="fh5co_hover_news_img">
+                        <div class="fh5co_news_img">
+                            <img style="object-fit: cover" src="{{ asset("storage/".$course->images[0]->src) }}" alt=""/></div>
+                        <div>
+                            <a href="../../../../../24%20News%20Free%20Website%20Template%20-%20Free-CSS.com/24-news/single.html" class="d-block fh5co_small_post_heading"><span class="">{{ $course->name }}</span></a>
+                            <div class="c_g"><i class="fa fa-clock-o"></i> {{ $course->release_date }}</div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="item px-2">
-                <div class="fh5co_hover_news_img">
-                    <div class="fh5co_news_img"><img src="{{ asset("assets/images/joe-gardner-75333.jpg") }}" alt=""/></div>
-                    <div>
-                        <a href="../../../../../24%20News%20Free%20Website%20Template%20-%20Free-CSS.com/24-news/single.html" class="d-block fh5co_small_post_heading"><span class="">The top 10 best computer speakers in the market</span></a>
-                        <div class="c_g"><i class="fa fa-clock-o"></i> Oct 16,2017</div>
-                    </div>
-                </div>
-            </div>
-            <div class="item px-2">
-                <div class="fh5co_hover_news_img">
-                    <div class="fh5co_news_img"><img src="{{ asset("assets/images/ryan-moreno-98837.jpg") }}" alt=""/></div>
-                    <div>
-                        <a href="../../../../../24%20News%20Free%20Website%20Template%20-%20Free-CSS.com/24-news/single.html" class="d-block fh5co_small_post_heading"><span class="">The top 10 best computer speakers in the market</span></a>
-                        <div class="c_g"><i class="fa fa-clock-o"></i> Oct 16,2017</div>
-                    </div>
-                </div>
-            </div>
-            <div class="item px-2">
-                <div class="fh5co_hover_news_img">
-                    <div class="fh5co_news_img"><img src="{{ asset("assets/images/seth-doyle-133175.jpg") }}" alt=""/></div>
-                    <div>
-                        <a href="../../../../../24%20News%20Free%20Website%20Template%20-%20Free-CSS.com/24-news/single.html" class="d-block fh5co_small_post_heading"><span class="">The top 10 best computer speakers in the market</span></a>
-                        <div class="c_g"><i class="fa fa-clock-o"></i> Oct 16,2017</div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </div>
