@@ -103,6 +103,10 @@ ul{
     color: var(--error-msg-color);
 }
 
+.intro-slider img{
+    object-fit: cover;
+}
+
 /*#region Admin panel btn*/
 .admin-panel-link{
     display: flex;
