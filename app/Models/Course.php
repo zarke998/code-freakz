@@ -16,11 +16,14 @@ class Course extends Model
     public function languages(){
         return $this->belongsToMany(Language::class);
     }
-
     public function images(){
         return $this->hasMany(Image::class);
     }
     public function author(){
         return $this->belongsTo(Author::class);
+    }
+
+    public static function recommendedCourses(){
+        return Course::with("images")->inRandomOrder()->take(5)->get();
     }
 }

@@ -15,7 +15,6 @@ use SebastianBergmann\Diff\Diff;
 
 class CourseController extends FrontendController
 {
-
     /**
      * Display a listing of the resource.
      *
