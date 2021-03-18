@@ -11,10 +11,12 @@ class HomeController extends FrontendController
         $recommended_courses = Course::recommendedCourses();
         $discounted_courses = Course::topFiveDiscounted();
         $free_courses = Course::topFiveFree();
+        $recent_courses = Course::recentlyReleased();
 
         $this->data["recommended_courses"] = $recommended_courses;
         $this->data["discounted_courses"] = $discounted_courses;
         $this->data["free_courses"] = $free_courses;
+        $this->data["recent_courses"] = $recent_courses;
 
         return view("pages.home", $this->data);
     }

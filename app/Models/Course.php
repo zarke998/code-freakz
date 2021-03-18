@@ -28,13 +28,17 @@ class Course extends Model
     }
 
     public static function topFiveDiscounted(){
-        return Course::with("images")->where("discount",">","0")
+        return Course::with("images")->with("author")->where("discount",">","0")
             ->orderByDesc("discount")->take(5)->get();
     }
 
     public static function topFiveFree(){
         return Course::with("images")->where("price","=","0")
             ->take(5)->get();
+    }
 
+    public static function recentlyReleased(){
+        return Course::with("images")->orderByDesc("release_date")
+            ->take(4)->get();
     }
 }
