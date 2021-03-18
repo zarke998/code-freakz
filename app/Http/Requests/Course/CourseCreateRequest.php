@@ -30,6 +30,7 @@ class CourseCreateRequest extends FormRequest
             "price" => "bail|required|numeric",
             "discount" => "bail|numeric",
             "category_id" => "bail|required|exists:categories,id",
+            "release_date" => "bail|required|date",
             "difficulty_id" => "bail|required|exists:difficulties,id",
             "language_id" => "bail|required|array",
             "language_id.*" => "bail|required|exists:languages,id",
