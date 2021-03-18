@@ -22,6 +22,14 @@ class CourseController extends FrontendController
      */
     public function index()
     {
+        $languages = Language::all();
+        $categories = Category::all();
+        $difficulties = Difficulty::all();
+
+        $this->data["languages"] = $languages;
+        $this->data["categories"] = $categories;
+        $this->data["difficulties"] = $difficulties;
+
         return view("pages.courses.index", $this->data);
     }
 

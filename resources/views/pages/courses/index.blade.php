@@ -103,113 +103,58 @@
                     <div class="sub-filter">
                         <h4>Categories</h4>
                         <ul>
-                            <li class="mb-2">
-                                <div class="d-flex align-items-center cf-checkbox">
-                                    <div>
-                                        <input type="checkbox" id="customCheck1"/>
-                                        <i class="material-icons cf-checked">check_box</i>
-                                        <i class="material-icons cf-unchecked">check_box_outline_blank</i>
+                            @foreach($categories as $category)
+                                <li class="mb-2">
+                                    <div class="d-flex align-items-center cf-checkbox">
+                                        <div>
+                                            <input name="category[]" type="checkbox" id="category{{ $category->id }}"/>
+                                            <i class="material-icons cf-checked">check_box</i>
+                                            <i class="material-icons cf-unchecked">check_box_outline_blank</i>
+                                        </div>
+                                        <label class="mb-0 ml-2" for="category{{ $category->id }}">{{ $category->name }}</label>
                                     </div>
-                                    <label class="mb-0 ml-2" for="customCheck1">Check this custom checkbox</label>
-                                </div>
-                            </li>
-                            <li class="mb-2">
-                                <div class="d-flex align-items-center cf-checkbox">
-                                    <div>
-                                        <input type="checkbox" id="customCheck1"/>
-                                        <i class="material-icons cf-checked">check_box</i>
-                                        <i class="material-icons cf-unchecked">check_box_outline_blank</i>
-                                    </div>
-                                    <label class="mb-0 ml-2" for="customCheck1">Check this custom checkbox</label>
-                                </div>
-                            </li>
-                            <li class="mb-2">
-                                <div class="d-flex align-items-center cf-checkbox">
-                                    <div>
-                                        <input type="checkbox" id="customCheck1"/>
-                                        <i class="material-icons cf-checked">check_box</i>
-                                        <i class="material-icons cf-unchecked">check_box_outline_blank</i>
-                                    </div>
-                                    <label class="mb-0 ml-2" for="customCheck1">Check this custom checkbox</label>
-                                </div>
-                            </li>
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
                     <div class="sub-filter">
                         <h4>Language</h4>
                         <ul>
-                            <li class="mb-2">
-                                <div class="d-flex align-items-center cf-checkbox">
-                                    <div>
-                                        <input type="checkbox" id="customCheck1"/>
-                                        <i class="material-icons cf-checked">check_box</i>
-                                        <i class="material-icons cf-unchecked">check_box_outline_blank</i>
+                            @foreach($languages as $language)
+                                <li class="mb-2">
+                                    <div class="d-flex align-items-center cf-checkbox">
+                                        <div>
+                                            <input name="language[]" type="checkbox" id="language{{ $language->id }}"/>
+                                            <i class="material-icons cf-checked">check_box</i>
+                                            <i class="material-icons cf-unchecked">check_box_outline_blank</i>
+                                        </div>
+                                        <label class="mb-0 ml-2" for="language{{ $language->id }}">{{ $language->name }}</label>
                                     </div>
-                                    <label class="mb-0 ml-2" for="customCheck1">Check this custom checkbox</label>
-                                </div>
-                            </li>
-                            <li class="mb-2">
-                                <div class="d-flex align-items-center cf-checkbox">
-                                    <div>
-                                        <input type="checkbox" id="customCheck1"/>
-                                        <i class="material-icons cf-checked">check_box</i>
-                                        <i class="material-icons cf-unchecked">check_box_outline_blank</i>
-                                    </div>
-                                    <label class="mb-0 ml-2" for="customCheck1">Check this custom checkbox</label>
-                                </div>
-                            </li>
-                            <li class="mb-2">
-                                <div class="d-flex align-items-center cf-checkbox">
-                                    <div>
-                                        <input type="checkbox" id="customCheck1"/>
-                                        <i class="material-icons cf-checked">check_box</i>
-                                        <i class="material-icons cf-unchecked">check_box_outline_blank</i>
-                                    </div>
-                                    <label class="mb-0 ml-2" for="customCheck1">Check this custom checkbox</label>
-                                </div>
-                            </li>
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
                     <div class="sub-filter">
                         <h4>Difficulty</h4>
                         <ul>
-                            <li class="mb-2">
-                                <div class="d-flex align-items-center cf-checkbox">
-                                    <div>
-                                        <input type="checkbox" id="customCheck1"/>
-                                        <i class="material-icons cf-checked">check_box</i>
-                                        <i class="material-icons cf-unchecked">check_box_outline_blank</i>
+                            @foreach($difficulties as $difficulty)
+                                <li class="mb-2">
+                                    <div class="d-flex align-items-center cf-checkbox">
+                                        <div>
+                                            <input name="difficulty[]" type="checkbox" id="difficulty{{ $difficulty->id }}"/>
+                                            <i class="material-icons cf-checked">check_box</i>
+                                            <i class="material-icons cf-unchecked">check_box_outline_blank</i>
+                                        </div>
+                                        <label class="mb-0 ml-2" for="difficulty{{ $difficulty->id }}">{{ $difficulty->name }}</label>
                                     </div>
-                                    <label class="mb-0 ml-2" for="customCheck1">Check this custom checkbox</label>
-                                </div>
-                            </li>
-                            <li class="mb-2">
-                                <div class="d-flex align-items-center cf-checkbox">
-                                    <div>
-                                        <input type="checkbox" id="customCheck1"/>
-                                        <i class="material-icons cf-checked">check_box</i>
-                                        <i class="material-icons cf-unchecked">check_box_outline_blank</i>
-                                    </div>
-                                    <label class="mb-0 ml-2" for="customCheck1">Check this custom checkbox</label>
-                                </div>
-                            </li>
-                            <li class="mb-2">
-                                <div class="d-flex align-items-center cf-checkbox">
-                                    <div>
-                                        <input type="checkbox" id="customCheck1"/>
-                                        <i class="material-icons cf-checked">check_box</i>
-                                        <i class="material-icons cf-unchecked">check_box_outline_blank</i>
-                                    </div>
-                                    <label class="mb-0 ml-2" for="customCheck1">Check this custom checkbox</label>
-                                </div>
-                            </li>
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
                 <div class="clearfix"></div>
             </div>
         </div>
-
     </div>
 </div>
 <div class="container-fluid pb-4 pt-5">
