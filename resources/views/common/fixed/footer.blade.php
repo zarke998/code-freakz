@@ -30,13 +30,11 @@
                 </ul>
             </div>
             <div class="col-12 col-md-5 col-lg-3 position_footer_relative">
-                <div class="footer_main_title py-3">Popular courses</div>
-                <div class="footer_makes_sub_font"> Dec 31, 2016</div>
-                <a href="#" class="footer_post pb-4"> Success is not a good teacher failure makes you humble </a>
-                <div class="footer_makes_sub_font"> Dec 31, 2016</div>
-                <a href="#" class="footer_post pb-4"> Success is not a good teacher failure makes you humble </a>
-                <div class="footer_makes_sub_font"> Dec 31, 2016</div>
-                <a href="#" class="footer_post pb-4"> Success is not a good teacher failure makes you humble </a>
+                <div class="footer_main_title py-3">Recommended courses</div>
+                @foreach($footer_courses as $course)
+                    <div class="footer_makes_sub_font"> {{ $course->release_date }}</div>
+                    <a href="#" class="footer_post pb-4"> {{ $course->name }}</a>
+                @endforeach
                 <div class="footer_position_absolute"><img src="{{ asset("assets/images/footer_sub_tipik.png") }}" alt="img" class="width_footer_sub_img"/></div>
             </div>
             <div class="col-12 col-md-12 col-lg-4 latest-youtube-video ">
