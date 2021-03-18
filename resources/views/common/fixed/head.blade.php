@@ -7,6 +7,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>@yield("title")</title>
 
+        <link rel="icon" href="{{ asset("assets/images/favicon.png") }}" type="image/x-icon"/>
+
+
         <link href="{{ asset('assets/css/media_query.css') }}" rel="stylesheet" type="text/css"/>
         <link href="{{ asset('assets/css/bootstrap.css') }}" rel="stylesheet" type="text/css"/>
 
