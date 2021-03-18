@@ -4,7 +4,7 @@
 @section("title") CodeFreakz | Contact @endsection
 
     @section("content")
-<div class="container-fluid contact_us_bg_img">
+<div class="container-fluid contact_us_bg_img" style="background: url(&apos;{{ asset("assets/images/contact wallpaper - compressed.jpg") }}&apos;); background-size: cover;">
     <div class="container">
         <div class="row">
             <a href="#" class="fh5co_con_123"><i class="fa fa-home"></i></a>
@@ -22,7 +22,7 @@
                     </div>
                     <div class="col-9 align-self-center fh5co_contact_us_no_icon_difh5co_hover_2">
                         <span class="c_g d-block">Call Us</span>
-                        <span class="d-block c_g fh5co_contact_us_no_text">+1 800 559 658</span>
+                        <span class="d-block c_g fh5co_contact_us_no_text">+381 111 222 333</span>
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -34,7 +34,7 @@
                     </div>
                     <div class="col-9 align-self-center fh5co_contact_us_no_icon_difh5co_hover_2">
                         <span class="c_g d-block">Have any questions?</span>
-                        <span class="d-block c_g fh5co_contact_us_no_text">News@example.com</span>
+                        <span class="d-block c_g fh5co_contact_us_no_text">andrej.zarkovski.22.18@ict.edu.rs</span>
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -46,7 +46,7 @@
                     </div>
                     <div class="col-9 align-self-center fh5co_contact_us_no_icon_difh5co_hover_2">
                         <span class="c_g d-block">Address</span>
-                        <span class="d-block c_g fh5co_contact_us_no_text"> 123 Some Street USA</span>
+                        <span class="d-block c_g fh5co_contact_us_no_text"> Zdravka Čelara 16, Beograd</span>
                     </div>
                     <div class="clearfix"></div>
                 </div>
