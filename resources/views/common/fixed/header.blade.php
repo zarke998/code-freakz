@@ -33,22 +33,22 @@
             <div class="col-12 col-md-9 align-self-center justify-content-end align-items-center d-none d-md-flex">
                 <div class="d-none d-lg-flex">
                     <div class="text-center d-inline-block">
-                        <a class="fh5co_display_table">
+                        <a href="https://www.linkedin.com/in/andrej-zarkovski-01b8a4188/" target="_blank" class="fh5co_display_table">
                             <div class="fh5co_verticle_middle"><i class="fa fa-linkedin"></i></div>
                         </a>
                     </div>
                     <div class="text-center d-inline-block">
-                        <a class="fh5co_display_table">
-                            <div class="fh5co_verticle_middle"><i class="fa fa-google-plus"></i></div>
+                        <a href="https://youtube.com" class="fh5co_display_table" target="_blank">
+                            <div class="fh5co_verticle_middle"><i class="fa fa-youtube"></i></div>
                         </a>
                     </div>
                     <div class="text-center d-inline-block">
-                        <a href="https://twitter.com/fh5co" target="_blank" class="fh5co_display_table">
+                        <a href="https://twitter.com" target="_blank" class="fh5co_display_table" target="_blank">
                             <div class="fh5co_verticle_middle"><i class="fa fa-twitter"></i></div>
                         </a>
                     </div>
                     <div class="text-center d-inline-block">
-                        <a href="https://fb.com/fh5co" target="_blank" class="fh5co_display_table">
+                        <a href="https://facebook.com" target="_blank" class="fh5co_display_table" target="_blank">
                             <div class="fh5co_verticle_middle"><i class="fa fa-facebook"></i></div>
                         </a>
                     </div>
