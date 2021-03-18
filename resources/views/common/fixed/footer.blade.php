@@ -49,10 +49,9 @@
         <div class="row  ">
             <div class="col-12 col-md-6 py-4 Reserved"> © Copyright {{ date("Y") }}, Code Mastery. All rights reserved. </div>
             <div class="col-12 col-md-6 spdp_right py-4 d-flex flex-wrap justify-content-center">
-                <a href="#" class="footer_last_part_menu">Home</a>
-                <a href="../../../../../24%20News%20Free%20Website%20Template%20-%20Free-CSS.com/24-news/Contact_us.html" class="footer_last_part_menu">About</a>
-                <a href="../../../../../24%20News%20Free%20Website%20Template%20-%20Free-CSS.com/24-news/Contact_us.html" class="footer_last_part_menu">Contact</a>
-                <a href="../../../../../24%20News%20Free%20Website%20Template%20-%20Free-CSS.com/24-news/blog.html" class="footer_last_part_menu">Latest News</a></div>
+                @foreach($header_menu as $menu_item)
+                    <a href="{{ route($menu_item->route) }}" class="footer_last_part_menu"> {{ $menu_item->name }}</a>
+                @endforeach
         </div>
     </div>
 </div>
