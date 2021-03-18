@@ -9,6 +9,7 @@ use App\Models\Course;
 use App\Models\Difficulty;
 use App\Models\Image;
 use App\Models\Language;
+use http\Env\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use SebastianBergmann\Diff\Diff;
@@ -152,18 +153,42 @@ class CourseController extends FrontendController
         $per_page = 8;
         $offset = 0;
 
+        $courses = Course::with("images")->with("author");
+
+        $data = [];
+
+        //FILTERS
+        if($request->has("search")){
+            $courses = $courses->where("courses.name", "LIKE", "%".$request->input("search")."%");
+        }
+        if($request->has("languages")){
+            $courses = $courses->whereHas("languages", function($l) use ($request){
+                $l->whereIn("languages.id", $request->input("languages"));
+            });
+        }
+        if($request->has("category")){
+            $courses = $courses->where("category_id", "=", $request->input("category"));
+        }
+        if($request->has("difficulty")){
+            $courses = $courses->where("difficulty_id", "=", $request->input("difficulty"));
+        }
+        $filtered_count = $courses->count();
+
+
+        // LIMIT AND OFFSET
         if($request->has("per_page"))
             $per_page = $request->input("per_page");
 
         if($request->has("offset"))
             $offset = $request->input("offset");
 
-        $data = [];
+        $courses = $courses->skip($offset)->take($per_page)->get();
 
+        //Courses count is used in admin panel - courses page
         $courses_count = Course::all()->count();
-        $courses = Course::with("author")->skip($offset)->take($per_page)->get();
-
         $data["courses_count"] = $courses_count;
+        $data["filtered_count"] = $filtered_count;
+
         $data["courses"] = $courses;
 
         return response()->json($data);

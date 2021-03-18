@@ -130,6 +130,10 @@ ul{
     border: 1px solid var(--yellow-primary);
 }
 
+.course-container{
+    color: black;
+}
+
 /*#region Admin panel btn*/
 .admin-panel-link{
     display: flex;

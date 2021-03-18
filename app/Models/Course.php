@@ -23,6 +23,10 @@ class Course extends Model
         return $this->belongsTo(Author::class);
     }
 
+    public function category(){
+        return $this->belongsTo(Category::class);
+    }
+
     public static function recommendedCourses(){
         return Course::with("images")->inRandomOrder()->take(5)->get();
     }
