@@ -136,7 +136,7 @@
                 <div>
                     <div class="fh5co_heading fh5co_heading_border_bottom pt-3 py-2 mb-4">{{ $rand_lang->name }}</div>
                 </div>
-                @foreach($rand_lang->courses as $course)
+                @foreach($rand_lang->courses->take(4) as $course)
                     <div class="row py-3">
                         <div class="col-lg-5 align-self-center">
                             <img style="object-fit: cover" src="{{ asset("storage/".$course->images[0]->src) }}" alt="img" class="fh5co_most_trading"/>
