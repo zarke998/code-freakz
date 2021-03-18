@@ -39,7 +39,7 @@
             </div>
             <div class="col-12 col-md-12 col-lg-4 latest-youtube-video ">
                 <div class="footer_main_title py-3"> Our latest YouTube video</div>
-                <img class="px-0 px-md-5 px-lg-0" src="https://99designs-blog.imgix.net/blog/wp-content/uploads/2019/05/youtube-logo.png?auto=format&q=60&fit=max&w=930" alt="Latest youtube video" />
+                <iframe style="width: 100%" height="190px" src="https://www.youtube.com/embed/F-sFp_AvHc8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
     </div>
