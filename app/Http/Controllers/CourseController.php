@@ -26,10 +26,13 @@ class CourseController extends FrontendController
         $languages = Language::all();
         $categories = Category::all();
         $difficulties = Difficulty::all();
+        $recommended_courses = Course::recommendedCourses();
 
         $this->data["languages"] = $languages;
         $this->data["categories"] = $categories;
         $this->data["difficulties"] = $difficulties;
+        $this->data["recommended_courses"] = $recommended_courses;
+
 
         return view("pages.courses.index", $this->data);
     }
