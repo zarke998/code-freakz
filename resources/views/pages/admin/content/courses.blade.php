@@ -20,17 +20,7 @@
                 </tr>
                 </thead>
                 <tbody id="courses-container">
-{{--                @foreach($courses as $course)--}}
-{{--                    <tr>--}}
-{{--                        <th scope="row">{{ $course->id }}</th>--}}
-{{--                        <td>{{ $course->name }}</td>--}}
-{{--                        <td>{{ $course->author->first_name . " " . $course->author->last_name }}</td>--}}
-{{--                        <td class="table-actions d-flex justify-content-center">--}}
-{{--                            <a href="#" class="cf-link"><i class="lni lni-pencil"></i></a>--}}
-{{--                            <a href="#" class="cf-link ml-3"><i class="lni lni-trash"></i></a>--}}
-{{--                        </td>--}}
-{{--                    </tr>--}}
-{{--                @endforeach--}}
+
                 </tbody>
             </table>
             <div class="row">
@@ -38,7 +28,7 @@
                     <a href="#" class="course-page-btn btn_mange_pagging mb-2" data-inc="-1"><i class="fa fa-long-arrow-left"></i><span class="d-lg-inline-block d-none"> Previous </span></a>
                     <a href="#" class="course-page-btn btn_mange_pagging mb-2" data-inc="1" >
                         <span class="d-lg-inline-block d-none">Next</span>
-                        <i class="fa fa-long-arrow-right"></i>&nbsp;&nbsp;
+                        <i class="fa fa-long-arrow-right"></i>&nbsp
                     </a>
                 </div>
             </div>

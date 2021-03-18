@@ -14,6 +14,7 @@
                 <div>
                     <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4">Courses</div>
                 </div>
+
                 <div class="row pb-4">
                     <div class="col-md-5">
                         <div class="fh5co_hover_news_img">
@@ -95,6 +96,9 @@
             <div class="col-md-3 animate-box" data-animate-effect="fadeInRight">
                 <div>
                     <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4">Filters</div>
+                    <div class="search">
+                        <input type="text" name="search" placeholder="Search courses...">
+                    </div>
 
                     <div class="sub-filter">
                         <h4>Categories</h4>

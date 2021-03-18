@@ -18,7 +18,8 @@
                         </a></div>
                     <div class="text-center d-inline-block"><a href="https://facebook.com" target="_blank" class="fh5co_display_table_footer">
                             <div class="fh5co_verticle_middle"><i class="fa fa-facebook"></i></div>
-                        </a></div>
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="col-12 col-md-3 col-lg-2">
