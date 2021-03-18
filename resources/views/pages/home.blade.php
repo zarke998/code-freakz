@@ -18,7 +18,7 @@
                         {{ $recommended_courses[0]->release_date }}
                     </div>
                     <div class="">
-                        <a href="../../../../../24%20News%20Free%20Website%20Template%20-%20Free-CSS.com/24-news/single.html" class="fh5co_good_font">
+                        <a href="{{ route("courses.show", [ "id" => $recommended_courses[0]->id]) }}" class="fh5co_good_font">
                             {{ $recommended_courses[0]->name }}
                         </a>
                     </div>
@@ -36,7 +36,7 @@
                                 <div class="">
                                         {{ $recommended_courses[0]->release_date }}
                                 </div>
-                                <div class=""><a href="../../../../../24%20News%20Free%20Website%20Template%20-%20Free-CSS.com/24-news/single.html" class="fh5co_good_font_2">
+                                <div class=""><a href="{{ route("courses.show", [ "id" => $recommended_courses[$i]->id]) }}" class="fh5co_good_font_2">
                                         {{ $recommended_courses[$i]->name }}
                                     </a>
                                 </div>
@@ -63,7 +63,7 @@
                         <div class="fh5co_news_img">
                             <img style="object-fit: cover" src="{{ asset("storage/".$course->images[0]->src) }}" alt=""/></div>
                         <div>
-                            <a href="../../../../../24%20News%20Free%20Website%20Template%20-%20Free-CSS.com/24-news/single.html" class="d-block fh5co_small_post_heading"><span class="">{{ $course->name }}</span></a>
+                            <a href="{{ route("courses.show", [ "id" => $course->id]) }}" class="d-block fh5co_small_post_heading"><span class="">{{ $course->name }}</span></a>
                             <div class="c_g"><i class="fa fa-clock-o"></i> {{ $course->release_date }}</div>
                         </div>
                     </div>
@@ -85,7 +85,7 @@
                             <div class="fh5co_news_img">
                                 <img style="object-fit: cover" src="{{ asset("storage/".$course->images[0]->src) }}" alt=""/></div>
                             <div>
-                                <a href="../../../../../24%20News%20Free%20Website%20Template%20-%20Free-CSS.com/24-news/single.html" class="d-block fh5co_small_post_heading"><span class="">{{ $course->name }}</span></a>
+                                <a href="{{ route("courses.show", [ "id" => $course->id]) }}" class="d-block fh5co_small_post_heading"><span class="">{{ $course->name }}</span></a>
                                 <div class="c_g"><i class="fa fa-clock-o"></i> {{ $course->release_date }}</div>
                             </div>
                         </div>
@@ -111,9 +111,9 @@
                             </div>
                         </div>
                         <div class="col-md-7 animate-box">
-                            <a style="display: block" href="../../../../../24%20News%20Free%20Website%20Template%20-%20Free-CSS.com/24-news/single.html" class="fh5co_magna py-2">
+                            <a style="display: block" href="{{ route("courses.show", [ "id" => $course->id]) }}" class="fh5co_magna py-2">
                                 {{ $course->name }}
-                            </a> <a href="../../../../../24%20News%20Free%20Website%20Template%20-%20Free-CSS.com/24-news/single.html" class="fh5co_mini_time pb-3">
+                            </a> <a href="{{ route("courses.show", [ "id" => $course->id]) }}" class="fh5co_mini_time pb-3">
                                 {{ $course->author->first_name . " " . $course->author->last_name }} <span class="pl-1"> {{ $course->release_date }}</span>
                             </a>
                             <div class="fh5co_consectetur">
