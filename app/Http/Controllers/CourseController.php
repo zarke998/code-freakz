@@ -67,9 +67,12 @@ class CourseController extends FrontendController
 
         //Save image
 //        $new_image_name = md5($request->file("image")->getFilename()) . time() . "." . $request->file("image")->extension();
-        $src = Storage::disk("public")->put("images/", $request->file("image"));
 
-        Image::create(["src" => $src, "course_id" => $course->id]);
+        $base_url = "https://code-freakz.s3.eu-central-1.amazonaws.com/";
+        $relative_src = Storage::disk("s3")->put("public/images", $request->file("image"), "public");
+        $src = Storage::disk("s3")->url($relative_src);
+
+        Image::create(["src" => $src, "relative_src" => $relative_src, "course_id" => $course->id]);
 
         return redirect()->route("admin.coursesPage")->with("entityInsertMsg", "Course added successfully.");
     }
@@ -124,12 +127,12 @@ class CourseController extends FrontendController
         $course->languages()->sync($request->input("language_id"));
 
         if($request->has("image")){
-            Storage::disk("public")->delete($course->images[0]->src);
+            Storage::disk("s3")->delete($course->images[0]->relative_src);
             Image::where("course_id","=", $course->id)->delete();
 
-            $src = Storage::disk("public")->put("images/", $request->file("image"));
-
-            Image::create(["src" => $src, "course_id" => $course->id]);
+            $relative_src = Storage::disk("s3")->put("public/images", $request->file("image"),"public");
+            $src = Storage::disk("s3")->url($relative_src);
+            Image::create(["src" => $src, "relative_src" => $relative_src,"course_id" => $course->id]);
         }
 
         return redirect()->route("admin.coursesPage")->with("entityInsertMsg", "Course updated successfully.");
@@ -147,7 +150,7 @@ class CourseController extends FrontendController
 
         $course->languages()->sync([]);
 
-        Storage::disk("public")->delete($course->images[0]->src);
+        Storage::disk("s3")->delete($course->images[0]->relative_src);
         Image::where("course_id","=", $course->id)->delete();
 
         $course->delete();

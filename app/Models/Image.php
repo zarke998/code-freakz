@@ -11,7 +11,7 @@ class Image extends Model
 
     protected $table = "images";
 
-    protected $fillable = ["src","course_id"];
+    protected $fillable = ["src","course_id","relative_src"];
 
     public $timestamps = false;
 }
