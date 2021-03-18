@@ -22,9 +22,11 @@ class Course extends Model
     public function author(){
         return $this->belongsTo(Author::class);
     }
-
     public function category(){
         return $this->belongsTo(Category::class);
+    }
+    public function difficulty(){
+        return $this->belongsTo(Difficulty::class);
     }
 
     public static function recommendedCourses(){

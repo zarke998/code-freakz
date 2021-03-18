@@ -134,6 +134,10 @@ ul{
     color: black;
 }
 
+.link-disabled:hover{
+    cursor: default;
+}
+
 /*#region Admin panel btn*/
 .admin-panel-link{
     display: flex;

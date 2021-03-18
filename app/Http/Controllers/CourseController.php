@@ -82,7 +82,10 @@ class CourseController extends FrontendController
      */
     public function show($id)
     {
-        //
+        $course = Course::find($id);
+
+        $this->data["course"] = $course;
+        return view("pages.courses.show", $this->data);
     }
 
     /**

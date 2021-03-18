@@ -6,6 +6,8 @@ Route::get('/',[\App\Http\Controllers\HomeController::class, "index"])->name("ho
 
 //region Courses
 Route::get('/courses', [\App\Http\Controllers\CourseController::class, "index"])->name("courses");
+Route::get('/courses/{id}', [\App\Http\Controllers\CourseController::class, "show"])->name("courses.show")
+    ->whereNumber("id");
 Route::get('/courses/create', [\App\Http\Controllers\CourseController::class, "create"])->name("course.create");
 Route::post('/courses/store', [\App\Http\Controllers\CourseController::class, "store"])->name("course.store");
 Route::get('/courses/edit/{id}', [\App\Http\Controllers\CourseController::class, "edit"])->name("course.edit")

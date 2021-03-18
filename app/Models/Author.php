@@ -13,4 +13,8 @@ class Author extends Model
     public $timestamps = false;
 
     protected $fillable = ["first_name", "last_name", "birth_date"];
+
+    public function topFourCourses(){
+        return $this->hasMany(Course::class)->take(4)->get();
+    }
 }

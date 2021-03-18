@@ -12,7 +12,11 @@ $(document).ready(function(){
 
     $(".footer_cat").click(function (e){
         e.preventDefault();
-    })
+    });
+
+    $(".link-disabled").click(function(e){
+        e.preventDefault();
+    });
 })
 
 function toggleSearchField(){
