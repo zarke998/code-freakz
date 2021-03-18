@@ -42,15 +42,6 @@
                 <img class="px-0 px-md-5 px-lg-0" src="https://99designs-blog.imgix.net/blog/wp-content/uploads/2019/05/youtube-logo.png?auto=format&q=60&fit=max&w=930" alt="Latest youtube video" />
             </div>
         </div>
-        <div class="row justify-content-center pt-4 pb-4">
-            <div class="col-12 col-md-8 col-lg-7 ">
-                <div class="input-group">
-                    <span class="input-group-addon fh5co_footer_text_box" id="basic-addon1"><i class="fa fa-envelope"></i></span>
-                    <input type="text" class="form-control fh5co_footer_text_box" placeholder="Enter your email..." aria-describedby="basic-addon1">
-                    <a href="#" class="input-group-addon fh5co_footer_subcribe" id="basic-addon12"> <i class="fa fa-paper-plane-o"></i>&nbsp;&nbsp;Subscribe</a>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
 <div class="container-fluid fh5co_footer_right_reserved">
