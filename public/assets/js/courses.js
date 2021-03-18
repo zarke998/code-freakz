@@ -1,5 +1,8 @@
 var per_page = 5;
 var offset = 0;
+var filtered_count;
+var active_page = 1;
+var filters = {};
 
 $(document).ready(function(){
     initializeCourses();
@@ -9,23 +12,71 @@ $(document).ready(function(){
 
 function initializeCourses(){
     offset = 0;
+    active_page = 1;
 
-    $.ajax({
-        url: "/courses/pagination",
-        method: "GET",
-        data: {
-            offset: offset,
-            per_page: per_page
-        },
-        success: function (data){
-            displayCourses(data.courses);
-        },
-        error: function (xhr, statusText, error){
+    ajaxGetCourses({
+        offset: offset,
+        per_page: per_page
+    }, function(resultData){
+        console.log(resultData);
+        filtered_count = resultData.filtered_count;
 
-        }
+        displayCourses(resultData.courses);
+
+        let nOfPages = Math.ceil(resultData.filtered_count/per_page);
+        displayPagination(nOfPages,active_page);
     });
 }
 
+function applyFilters(){
+    collectFilters();
+
+    let data = filters;
+
+    offset = 0;
+    active_page = 1;
+
+    data["offset"] = offset;
+    data["per_page"] = per_page;
+
+    ajaxGetCourses(data, function(responseData){
+        console.log("Courses fetched successfuly.");
+        console.log(responseData);
+        filtered_count = responseData.filtered_count;
+
+        displayCourses(responseData.courses);
+
+        let nOfPages = Math.ceil(responseData.filtered_count/per_page);
+        displayPagination(nOfPages,active_page);
+    });
+}
+
+function displayPagination(nOfPages, activePage){
+    let content = ``;
+
+    let container = $("#pagination-container");
+
+    content += `<a href="#" class="btn_mange_pagging mb-2 pagination-btn prev-next-btn" data-inc="-1">
+                            <i class="fa fa-long-arrow-left"></i><span class="d-lg-inline-block d-none"> Previous </span>
+                        </a>`;
+
+    for(let i = 1; i <= nOfPages; i++){
+        if(i == activePage){
+            content += `<a href="#" class="btn_pagging mb-2 pagination-btn page-btn" data-page="${i}">${i}</a>`;
+        }
+        else{
+            content += `<a href="#" class="btn_pagging mb-2 pagination-btn page-btn page-btn-selected" data-page="${i}">${i}</a>`;
+        }
+    }
+
+    content += `<a href="#" class="btn_mange_pagging mb-2 pagination-btn prev-next-btn" data-inc="1">
+                            <span class="d-lg-inline-block d-none">Next</span> <i class="fa fa-long-arrow-right"></i>&nbsp;&nbsp;
+                        </a>`;
+
+    $(container).html(content);
+
+    $(".pagination-btn").click(goToPage);
+}
 function displayCourses(courses){
     let content = ``;
 
@@ -53,8 +104,46 @@ function displayCourses(courses){
     $(container).append(content);
 }
 
-function applyFilters(){
-    let filters = {};
+function goToPage(e){
+    e.preventDefault();
+
+    if($(this).attr("data-inc")){
+        let inc = parseInt($(this).data("inc"));
+
+        console.log(inc);
+        offset += per_page * inc;
+        active_page+= inc;
+
+        if(offset < 0 || offset > filtered_count){
+            offset -= per_page * inc;
+            active_page-= inc;
+        }
+    }
+    else{
+        let page = parseInt($(this).data("page"));
+        offset = (page - 1) * per_page;
+
+        active_page = page;
+    }
+
+    let data = filters;
+    data["offset"] = offset;
+    data["per_page"] = per_page;
+
+    ajaxGetCourses(data, function(responseData){
+
+        console.log(filters);
+        filtered_count = responseData.filtered_count;
+
+        displayCourses(responseData.courses);
+
+        let nOfPages = Math.ceil(responseData.filtered_count/per_page);
+        displayPagination(nOfPages,active_page);
+    });
+}
+
+function collectFilters(){
+    let filters = {}
 
     let languages = [];
     $(".language-filter").each(function(){
@@ -73,19 +162,17 @@ function applyFilters(){
     if($("#course-search").val() != "")
         filters["search"] = $("#course-search").val();
 
-    console.log(filters);
+    this.filters = filters;
+}
+function ajaxGetCourses(data, successCallback){
     $.ajax({
-       url: "/courses/pagination",
+        url: "/courses/pagination",
         method: "GET",
-        data: filters,
-        success: function (data){
-           console.log("Courses fetched successfuly.");
-           console.log(data);
-           displayCourses(data.courses);
-        },
+        data: data,
+        success: successCallback,
         error: function (xhr, statusText, error){
-           console.log(xhr.responseText);
-           alert("Error loading courses");
+            console.log(xhr.responseText);
+            alert("Error loading courses");
         }
     });
 }

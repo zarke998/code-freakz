@@ -21,13 +21,14 @@
 
                 </div>
                 <div class="row">
-                    <div class="col-12 text-center pb-4 pt-4 pl-sm-4 pr-sm-4 pl-0 pr-0 d-flex flex-wrap justify-content-center">
-                        <a href="#" class="btn_mange_pagging mb-2"><i class="fa fa-long-arrow-left"></i><span class="d-lg-inline-block d-none"> Previous </span></a>
-                        <a href="#" class="btn_pagging mb-2">1</a>
-                        <a href="#" class="btn_pagging mb-2">2</a>
-                        <a href="#" class="btn_pagging mb-2">3</a>
-                        <a href="#" class="btn_pagging mb-2">...</a>
-                        <a href="#" class="btn_mange_pagging mb-2"><span class="d-lg-inline-block d-none">Next</span> <i class="fa fa-long-arrow-right"></i>&nbsp;&nbsp; </a>
+                    <div id="pagination-container" class="col-12 text-center pb-4 pt-4 pl-sm-4 pr-sm-4 pl-0 pr-0 d-flex flex-wrap justify-content-center">
+                        <a href="#" class="btn_mange_pagging mb-2 pagination-btn prev-next-btn" data-inc="-1">
+                            <i class="fa fa-long-arrow-left"></i><span class="d-lg-inline-block d-none"> Previous </span>
+                        </a>
+                        <a href="#" class="btn_pagging mb-2 pagination-btn page-btn" data-page="1">1</a>
+                        <a href="#" class="btn_mange_pagging mb-2 pagination-btn prev-next-btn" data-inc="1">
+                            <span class="d-lg-inline-block d-none">Next</span> <i class="fa fa-long-arrow-right"></i>&nbsp;&nbsp;
+                        </a>
                     </div>
                 </div>
             </div>
