@@ -134,43 +134,19 @@
                     @endforeach
                 </div>
                 <div>
-                    <div class="fh5co_heading fh5co_heading_border_bottom pt-3 py-2 mb-4">C#</div>
+                    <div class="fh5co_heading fh5co_heading_border_bottom pt-3 py-2 mb-4">{{ $rand_lang->name }}</div>
                 </div>
-                <div class="row pb-3">
-                    <div class="col-lg-5 align-self-center">
-                        <img src="{{ asset("assets/images/download (1).jpg") }}" alt="img" class="fh5co_most_trading"/>
+                @foreach($rand_lang->courses as $course)
+                    <div class="row py-3">
+                        <div class="col-lg-5 align-self-center">
+                            <img style="object-fit: cover" src="{{ asset("storage/".$course->images[0]->src) }}" alt="img" class="fh5co_most_trading"/>
+                        </div>
+                        <div class="col-lg-7 mt-1 px-lg-0">
+                            <div class="most_fh5co_treding_font">{{ $course->name }}</div>
+                            <div class="most_fh5co_treding_font_123">{{ $course->release_date }}</div>
+                        </div>
                     </div>
-                    <div class="col-lg-7 mt-1 px-lg-0">
-                        <div class="most_fh5co_treding_font"> Magna aliqua ut enim ad minim veniam quis nostrud.</div>
-                        <div class="most_fh5co_treding_font_123"> April 18, 2016</div>
-                    </div>
-                </div>
-                <div class="row pb-3">
-                    <div class="col-5 align-self-center">
-                        <img src="{{ asset("assets/images/allef-vinicius-108153.jpg") }}" alt="img" class="fh5co_most_trading"/>
-                    </div>
-                    <div class="col-7 paddding">
-                        <div class="most_fh5co_treding_font"> Enim ad minim veniam nostrud xercitation ullamco.</div>
-                        <div class="most_fh5co_treding_font_123"> April 18, 2016</div>
-                    </div>
-                </div>
-                <div class="row pb-3">
-                    <div class="col-5 align-self-center">
-                        <img src="{{ asset("assets/images/download (2).jpg") }}" alt="img" class="fh5co_most_trading"/>
-                    </div>
-                    <div class="col-7 paddding">
-                        <div class="most_fh5co_treding_font"> Magna aliqua ut enim ad minim veniam quis nostrud.</div>
-                        <div class="most_fh5co_treding_font_123"> April 18, 2016</div>
-                    </div>
-                </div>
-                <div class="row pb-3">
-                    <div class="col-5 align-self-center"><img src="{{ asset("assets/images/seth-doyle-133175.jpg") }}" alt="img"
-                                                              class="fh5co_most_trading"/></div>
-                    <div class="col-7 paddding">
-                        <div class="most_fh5co_treding_font"> Magna aliqua ut enim ad minim veniam quis nostrud.</div>
-                        <div class="most_fh5co_treding_font_123"> April 18, 2016</div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
         <div class="row mx-0 animate-box" data-animate-effect="fadeInUp">
