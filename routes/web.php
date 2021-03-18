@@ -64,14 +64,18 @@ Route::get("/logout", [\App\Http\Controllers\AccountController::class, "logout"]
 //endregion
 
 //region Admin
-Route::get("/admin/content/courses", [\App\Http\Controllers\AdminPanelController::class, "coursesPage"])->name("admin.coursesPage");
-Route::get("/admin/content/authors", [\App\Http\Controllers\AdminPanelController::class, "authorsPage"])->name("admin.authorsPage");
-Route::get("/admin/content/languages", [\App\Http\Controllers\AdminPanelController::class, "languagesPage"])->name("admin.languagesPage");
-Route::get("/admin/content/categories", [\App\Http\Controllers\AdminPanelController::class, "categoriesPage"])->name("admin.categoriesPage");
-Route::get("/admin/content/difficulties", [\App\Http\Controllers\AdminPanelController::class, "difficultiesPage"])->name("admin.difficultiesPage");
-Route::get("/admin/content/menus", [\App\Http\Controllers\AdminPanelController::class, "menusPage"])->name("admin.menusPage");
+Route::middleware("admin")->group(function(){
+    Route::get("/admin/content/courses", [\App\Http\Controllers\AdminPanelController::class, "coursesPage"])->name("admin.coursesPage");
+    Route::get("/admin/content/authors", [\App\Http\Controllers\AdminPanelController::class, "authorsPage"])->name("admin.authorsPage");
+    Route::get("/admin/content/languages", [\App\Http\Controllers\AdminPanelController::class, "languagesPage"])->name("admin.languagesPage");
+    Route::get("/admin/content/categories", [\App\Http\Controllers\AdminPanelController::class, "categoriesPage"])->name("admin.categoriesPage");
+    Route::get("/admin/content/difficulties", [\App\Http\Controllers\AdminPanelController::class, "difficultiesPage"])->name("admin.difficultiesPage");
+    Route::get("/admin/content/menus", [\App\Http\Controllers\AdminPanelController::class, "menusPage"])->name("admin.menusPage");
 
-Route::get("/admin/logs", [\App\Http\Controllers\AdminPanelController::class, "logsPage"])->name("admin.logsPage");
+    Route::get("/admin/logs", [\App\Http\Controllers\AdminPanelController::class, "logsPage"])->name("admin.logsPage");
+});
 //endregion
+
+Route::get("/403", [\App\Http\Controllers\StatusController::class, "forbidden"])->name("403");
 
 Route::get("/test", [\App\Http\Controllers\TestController::class, "test"]);
