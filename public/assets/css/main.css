@@ -111,6 +111,10 @@ ul{
     cursor: default;
 }
 
+.footer_cat:hover{
+    cursor: default;
+}
+
 /*#region Admin panel btn*/
 .admin-panel-link{
     display: flex;

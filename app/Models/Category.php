@@ -14,7 +14,7 @@ class Category extends Model
 
     public $timestamps = false;
 
-    public static function topTenCategories(){
-        return Category::all()->take(10);
+    public static function topEightCategories(){
+        return Category::all()->take(8);
     }
 }

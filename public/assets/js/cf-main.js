@@ -9,6 +9,10 @@ $(document).ready(function(){
     $(".popular-categories a").click(function (e){
         e.preventDefault();
     })
+
+    $(".footer_cat").click(function (e){
+        e.preventDefault();
+    })
 })
 
 function toggleSearchField(){

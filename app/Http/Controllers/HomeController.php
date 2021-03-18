@@ -14,7 +14,7 @@ class HomeController extends FrontendController
         $discounted_courses = Course::topFiveDiscounted();
         $free_courses = Course::topFiveFree();
         $recent_courses = Course::recentlyReleased();
-        $categories = Category::topTenCategories();
+        $categories = Category::topEightCategories();
         $rand_lang = Language::randLangWithCourses();
 
         $this->data["recommended_courses"] = $recommended_courses;
