@@ -79,80 +79,18 @@
         </div>
         <div>
             <div class="owl-carousel owl-theme" id="slider3">
-                <div class="item px-2">
-                    <div class="fh5co_hover_news_img">
-                        <div class="fh5co_hover_news_img_video_tag_position_relative">
+                @foreach($free_courses as $course)
+                    <div class="item px-2">
+                        <div class="fh5co_hover_news_img">
                             <div class="fh5co_news_img">
-                                <iframe id="video" width="100%" height="200"
-                                        src="https://www.youtube.com/embed/aM9g4r9QUsM?rel=0&amp;showinfo=0"
-                                        frameborder="0" allowfullscreen></iframe>
+                                <img style="object-fit: cover" src="{{ asset("storage/".$course->images[0]->src) }}" alt=""/></div>
+                            <div>
+                                <a href="../../../../../24%20News%20Free%20Website%20Template%20-%20Free-CSS.com/24-news/single.html" class="d-block fh5co_small_post_heading"><span class="">{{ $course->name }}</span></a>
+                                <div class="c_g"><i class="fa fa-clock-o"></i> {{ $course->release_date }}</div>
                             </div>
-                            <div class="fh5co_hover_news_img_video_tag_position_absolute fh5co_hide">
-                                <img src="{{ asset("assets/images/ariel-lustre-208615.jpg") }}" alt=""/>
-                            </div>
-                        </div>
-                        <div class="pt-2">
-                            <a href="#" class="d-block fh5co_small_post_heading ">
-                            <span class="">The top 10 funniest videos on YouTube </span></a>
-                            <div class="c_g"><i class="fa fa-clock-o"></i> Oct 16,2017</div>
                         </div>
                     </div>
-                </div>
-                <div class="item px-2">
-                    <div class="fh5co_hover_news_img">
-                        <div class="fh5co_hover_news_img_video_tag_position_relative">
-                            <div class="fh5co_news_img">
-                                <iframe id="video_2" width="100%" height="200"
-                                        src="https://www.youtube.com/embed/aM9g4r9QUsM?rel=0&amp;showinfo=0"
-                                        frameborder="0" allowfullscreen></iframe>
-                            </div>
-                            <div class="fh5co_hover_news_img_video_tag_position_absolute fh5co_hide_2">
-                                <img src="{{ asset("assets/images/39-324x235.jpg") }}" alt=""/></div>
-                        </div>
-                        <div class="pt-2">
-                            <a href="#" class="d-block fh5co_small_post_heading ">
-                            <span class="">The top 10 embedded YouTube videos this month</span></a>
-                            <div class="c_g"><i class="fa fa-clock-o"></i> Oct 16,2017</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item px-2">
-                    <div class="fh5co_hover_news_img">
-                        <div class="fh5co_hover_news_img_video_tag_position_relative">
-                            <div class="fh5co_news_img">
-                                <iframe id="video_3" width="100%" height="200"
-                                        src="https://www.youtube.com/embed/aM9g4r9QUsM?rel=0&amp;showinfo=0"
-                                        frameborder="0" allowfullscreen></iframe>
-                            </div>
-                            <div class="fh5co_hover_news_img_video_tag_position_absolute fh5co_hide_3">
-                                <img src="{{ asset("assets/images/joe-gardner-75333.jpg") }}" alt=""/></div>
-                        </div>
-                        <div class="pt-2">
-                            <a href="#" class="d-block fh5co_small_post_heading ">
-                            <span class="">The top 10 best computer speakers in the market</span></a>
-                            <div class="c_g"><i class="fa fa-clock-o"></i> Oct 16,2017</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item px-2">
-                    <div class="fh5co_hover_news_img">
-                        <div class="fh5co_hover_news_img_video_tag_position_relative">
-                            <div class="fh5co_news_img">
-                                <iframe id="video_4" width="100%" height="200"
-                                        src="https://www.youtube.com/embed/aM9g4r9QUsM?rel=0&amp;showinfo=0"
-                                        frameborder="0" allowfullscreen></iframe>
-                            </div>
-                            <div class="fh5co_hover_news_img_video_tag_position_absolute fh5co_hide_4">
-                                <img src="{{ asset("assets/images/vil-son-35490.jpg") }}" alt=""/>
-                            </div>
-                        </div>
-                        <div class="pt-2">
-                            <a href="#" class="d-block fh5co_small_post_heading ">
-                                <span class="">The top 10 best computer speakers in the market</span></a>
-                            <div class="c_g"><i class="fa fa-clock-o"></i> Oct 16,2017</div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>

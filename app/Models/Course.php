@@ -31,4 +31,10 @@ class Course extends Model
         return Course::with("images")->where("discount",">","0")
             ->orderByDesc("discount")->take(5)->get();
     }
+
+    public static function topFiveFree(){
+        return Course::with("images")->where("price","=","0")
+            ->take(5)->get();
+
+    }
 }
