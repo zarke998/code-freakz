@@ -87,7 +87,7 @@ function displayCourses(courses){
         content += `<div class="row pb-4">
                     <div class="col-md-5">
                         <div class="fh5co_hover_news_img">
-                            <div class="fh5co_news_img"><img src="storage/${ course.images[0].src}" alt=""/></div>
+                            <div class="fh5co_news_img"><img src="${ course.images[0].src}" alt=""/></div>
                             <div></div>
                         </div>
                     </div>

@@ -11,7 +11,7 @@
     <div class="row mx-0 intro-slider">
         <div class="col-md-6 col-12 paddding animate-box" data-animate-effect="fadeIn">
             <div class="fh5co_suceefh5co_height">
-                <img src="{{ asset("storage/".$recommended_courses[0]->images[0]->src) }}" alt="img"/>
+                <img src="{{ $recommended_courses[0]->images[0]->src }}" alt="img"/>
                 <div class="fh5co_suceefh5co_height_position_absolute"></div>
                 <div class="fh5co_suceefh5co_height_position_absolute_font">
                     <div class="">
@@ -30,7 +30,7 @@
                 @for($i = 1; $i < $recommended_courses->count(); $i++)
                     <div class="col-md-6 col-6 paddding animate-box" data-animate-effect="fadeIn">
                         <div class="fh5co_suceefh5co_height_2">
-                            <img src="{{ asset("storage/".$recommended_courses[$i]->images[0]->src) }}" alt="img"/>
+                            <img src="{{ $recommended_courses[$i]->images[0]->src}}" alt="img"/>
                             <div class="fh5co_suceefh5co_height_position_absolute"></div>
                             <div class="fh5co_suceefh5co_height_position_absolute_font_2">
                                 <div class="">
@@ -61,7 +61,7 @@
                 <div class="item px-2">
                     <div class="fh5co_hover_news_img">
                         <div class="fh5co_news_img">
-                            <img style="object-fit: cover" src="{{ asset("storage/".$course->images[0]->src) }}" alt=""/></div>
+                            <img style="object-fit: cover" src="{{ $course->images[0]->src }}" alt=""/></div>
                         <div>
                             <a href="{{ route("courses.show", [ "id" => $course->id]) }}" class="d-block fh5co_small_post_heading"><span class="">{{ $course->name }}</span></a>
                             <div class="c_g"><i class="fa fa-clock-o"></i> {{ $course->release_date }}</div>
@@ -83,7 +83,7 @@
                     <div class="item px-2">
                         <div class="fh5co_hover_news_img">
                             <div class="fh5co_news_img">
-                                <img style="object-fit: cover" src="{{ asset("storage/".$course->images[0]->src) }}" alt=""/></div>
+                                <img style="object-fit: cover" src="{{ $course->images[0]->src }}" alt=""/></div>
                             <div>
                                 <a href="{{ route("courses.show", [ "id" => $course->id]) }}" class="d-block fh5co_small_post_heading"><span class="">{{ $course->name }}</span></a>
                                 <div class="c_g"><i class="fa fa-clock-o"></i> {{ $course->release_date }}</div>
@@ -106,7 +106,7 @@
                     <div class="row pb-4">
                         <div class="col-md-5">
                             <div class="fh5co_hover_news_img">
-                                <div class="fh5co_news_img"><img style="object-fit: cover" src="{{ asset("storage/".$course->images[0]->src) }}" alt=""/></div>
+                                <div class="fh5co_news_img"><img style="object-fit: cover" src="{{ $course->images[0]->src }}" alt=""/></div>
                                 <div></div>
                             </div>
                         </div>
@@ -139,7 +139,7 @@
                 @foreach($rand_lang->courses->take(4) as $course)
                     <div class="row py-3">
                         <div class="col-lg-5 align-self-center">
-                            <img style="object-fit: cover" src="{{ asset("storage/".$course->images[0]->src) }}" alt="img" class="fh5co_most_trading"/>
+                            <img style="object-fit: cover" src="{{ $course->images[0]->src }}" alt="img" class="fh5co_most_trading"/>
                         </div>
                         <div class="col-lg-7 mt-1 px-lg-0">
                             <div class="most_fh5co_treding_font">{{ $course->name }}</div>

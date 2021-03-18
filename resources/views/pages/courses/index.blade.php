@@ -89,7 +89,7 @@
             @foreach($recommended_courses as $course)
                 <div class="item px-2">
                     <div class="fh5co_hover_news_img">
-                        <div class="fh5co_news_img"><img  style="object-fit: cover"  src="{{ asset("storage/".$course->images[0]->src)  }}" alt=""/></div>
+                        <div class="fh5co_news_img"><img  style="object-fit: cover"  src="{{ $course->images[0]->src }}" alt=""/></div>
                         <div>
                             <a href="#" class="d-block fh5co_small_post_heading"><span class="">{{ $course->name }}</span></a>
                             <div class="c_g"><i class="fa fa-clock-o"></i> {{ $course->release_date }}</div>
