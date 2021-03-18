@@ -7,16 +7,16 @@
                 <div class="footer_main_title py-3"> About</div>
                 <div class="footer_sub_about pb-3"> Welcome to CodeFreakz. Here you can perfect your skills in various programming areas. From web development to OS development. Video tutorials are made by top of the class programmers with in depth coverage of the material being presented. Tutorial difficulties range from begginer to advanced, and on top of all, we have best prices.</div>
                 <div class="footer_mediya_icon">
-                    <div class="text-center d-inline-block"><a class="fh5co_display_table_footer">
+                    <div class="text-center d-inline-block"><a href="https://www.linkedin.com/in/andrej-zarkovski-01b8a4188/" target="_blank" class="fh5co_display_table_footer">
                             <div class="fh5co_verticle_middle"><i class="fa fa-linkedin"></i></div>
                         </a></div>
-                    <div class="text-center d-inline-block"><a class="fh5co_display_table_footer">
-                            <div class="fh5co_verticle_middle"><i class="fa fa-google-plus"></i></div>
+                    <div class="text-center d-inline-block"><a href="https://youtube.com" target="_blank" class="fh5co_display_table_footer">
+                            <div class="fh5co_verticle_middle"><i class="fa fa-youtube"></i></div>
                         </a></div>
-                    <div class="text-center d-inline-block"><a class="fh5co_display_table_footer">
+                    <div class="text-center d-inline-block"><a href="https://twitter.com" target="_blank" class="fh5co_display_table_footer" target="_blank" class="fh5co_display_table_footer">
                             <div class="fh5co_verticle_middle"><i class="fa fa-twitter"></i></div>
                         </a></div>
-                    <div class="text-center d-inline-block"><a class="fh5co_display_table_footer">
+                    <div class="text-center d-inline-block"><a href="https://facebook.com" target="_blank" class="fh5co_display_table_footer">
                             <div class="fh5co_verticle_middle"><i class="fa fa-facebook"></i></div>
                         </a></div>
                 </div>
