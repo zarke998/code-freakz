@@ -32,15 +32,6 @@
             </div>
             <div class="col-12 col-md-9 align-self-center justify-content-end align-items-center d-none d-md-flex">
                 <div class="d-none d-lg-flex">
-                    <div class="form-outline fh5co_verticle_middle flex-grow-1 search-input-container">
-                        <input type="search" id="search-input" class="form-control search-input" placeholder="Search"
-                               aria-label="Search"/>
-                    </div>
-                    <div class="text-center d-inline-block">
-                        <a class="fh5co_display_table">
-                            <div class="fh5co_verticle_middle search-btn"><i class="fa fa-search"></i></div>
-                        </a>
-                    </div>
                     <div class="text-center d-inline-block">
                         <a class="fh5co_display_table">
                             <div class="fh5co_verticle_middle"><i class="fa fa-linkedin"></i></div>
@@ -76,18 +67,6 @@
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false"
                         aria-label="Toggle navigation"><span class="fa fa-bars"></span></button>
-
-                <div class="d-flex">
-                    <div class="form-outline fh5co_verticle_middle flex-grow-1 search-input-container d-inline-block">
-                        <input type="search" id="search-input-on-navbar" class="form-control search-input" placeholder="Search"
-                               aria-label="Search"/>
-                    </div>
-                    <div class="text-center d-inline-block">
-                        <a class="fh5co_display_table">
-                            <div class="fh5co_verticle_middle search-btn-on-navbar"><i class="fa fa-search"></i></div>
-                        </a>
-                    </div>
-                </div>
             </div>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
