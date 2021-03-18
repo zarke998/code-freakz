@@ -115,6 +115,7 @@ ul{
     cursor: default;
 }
 
+
 /*#region Admin panel btn*/
 .admin-panel-link{
     display: flex;
@@ -325,6 +326,10 @@ ul{
     .logo-footer-container{
         margin-top: 50px;
     }
+
+    .youtube-video{
+        height: 300px;
+    }
 }
 
 @media screen and (max-width: 767px){
@@ -350,6 +355,10 @@ ul{
 @media screen and (max-width: 350px){
     .logo-footer-container{
         margin-top: 250px;
+    }
+
+    .youtube-video{
+        height: 200px;
     }
 }
 

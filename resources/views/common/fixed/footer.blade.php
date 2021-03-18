@@ -39,7 +39,7 @@
             </div>
             <div class="col-12 col-md-12 col-lg-4 latest-youtube-video ">
                 <div class="footer_main_title py-3"> Our latest YouTube video</div>
-                <iframe style="width: 100%" height="190px" src="https://www.youtube.com/embed/F-sFp_AvHc8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe class="youtube-video" style="width: 100%" height="190px" src="https://www.youtube.com/embed/F-sFp_AvHc8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
     </div>
