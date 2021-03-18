@@ -13,4 +13,8 @@ class Category extends Model
     protected $fillable = ["name"];
 
     public $timestamps = false;
+
+    public static function topTenCategories(){
+        return Category::all()->take(10);
+    }
 }

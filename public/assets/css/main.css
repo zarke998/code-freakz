@@ -107,6 +107,10 @@ ul{
     object-fit: cover;
 }
 
+.popular-categories a:hover{
+    cursor: default;
+}
+
 /*#region Admin panel btn*/
 .admin-panel-link{
     display: flex;

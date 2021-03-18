@@ -5,6 +5,10 @@ var searchFieldOnNavbarEnabled = false;
 $(document).ready(function(){
     $(".search-btn").click(toggleSearchField);
     $(".search-btn-on-navbar").click(toggleSearchFieldOnNavbar);
+
+    $(".popular-categories a").click(function (e){
+        e.preventDefault();
+    })
 })
 
 function toggleSearchField(){
