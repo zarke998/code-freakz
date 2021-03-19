@@ -100,8 +100,13 @@ function displayCourses(courses){
                             ${course.description.substr(0, 120)} ...
                         </div>
                         <div class="d-flex justify-content-end mr-4">
-                            <span style="color:red; font-size: 18px"> ${ course.price }$</span>
-                        </div>
+                            <span style="color:red; font-size: 18px">`;
+
+                            if(course.price == 0) content+= `FREE`;
+                            else content += `${ Math.round(course.price * 100) / 100 }$`;
+
+                            content+=
+                        `</span></div>
                     </div>
                     </div>`;
     });

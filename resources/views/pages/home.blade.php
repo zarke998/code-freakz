@@ -68,7 +68,7 @@
                         </div>
                         <div class="d-flex justify-content-end align-items-center">
                             <span> <del>{{ $course->price }}$ </del></span> -
-                            <span style="color:red; font-size: 18px"> {{ $course->price - ($course->price * $course->discount / 100) }}$</span>
+                            <span style="color:red; font-size: 18px"> {{ round($course->price - ($course->price * $course->discount / 100), 2) }}$</span>
                         </div>
                     </div>
                 </div>
@@ -124,7 +124,13 @@
                                 {!! substr($course->description,0, 120) !!} ...
                             </div>
                             <div class="d-flex justify-content-end mr-4">
-                                <span style="color:red; font-size: 18px"> {{ $course->price }}$</span>
+                                <span style="color:red; font-size: 18px">
+                                    @if($course->price == 0)
+                                        FREE
+                                    @else
+                                        {{ round($course->price,2) }}$
+                                    @endif
+                                </span>
                             </div>
                         </div>
                     </div>
