@@ -23,11 +23,11 @@
         <div class="row mx-0">
             <div class="col-md-8 animate-box my-5" data-animate-effect="fadeInLeft">
                 <div>
-                    <img style="object-fit: cover" class="w-100" height="400px" src="{{ asset("storage/".$course->images[0]->src) }}" alt="" />
+                    <img style="object-fit: cover" class="w-100" height="400px" src="{{ $course->images[0]->src }}" alt="" />
                 </div>
                 <div>
                     <h2 class="my-5">Description</h2>
-                    <p>{{ $course->description }}</p>
+                    {{ $course->description }}
                 </div>
 
                 <div class="d-flex align-items-center">
