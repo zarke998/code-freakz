@@ -27,7 +27,7 @@
                 </div>
                 <div>
                     <h2 class="my-5">Description</h2>
-                    {{ $course->description }}
+                    {!! $course->description !!}
                 </div>
 
                 <div class="d-flex align-items-center">
