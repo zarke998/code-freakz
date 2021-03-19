@@ -117,7 +117,7 @@
                                 {{ $course->author->first_name . " " . $course->author->last_name }} <span class="pl-1"> {{ $course->release_date }}</span>
                             </a>
                             <div class="fh5co_consectetur">
-                                {{ substr($course->description,0, 50) }}
+                                {!! substr($course->description,0, 50) !!}
                             </div>
                         </div>
                     </div>
