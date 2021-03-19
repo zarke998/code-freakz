@@ -34,7 +34,7 @@
                 <div class="footer_main_title py-3">Recommended courses</div>
                 @foreach($footer_courses as $course)
                     <div class="footer_makes_sub_font"> {{ $course->release_date }}</div>
-                    <a href="{{ route("courses.show", ["id" => $course->id]) }}" class="cf-link footer_post pb-4">{{ $course->name }}</a>
+                    <a href="{{ route("courses.show", ["id" => $course->id]) }}" class=" footer_post pb-4">{{ $course->name }}</a>
                 @endforeach
                 <div class="footer_position_absolute"><img src="{{ asset("assets/images/footer_sub_tipik.png") }}" alt="img" class="width_footer_sub_img"/></div>
             </div>
