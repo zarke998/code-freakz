@@ -58,7 +58,7 @@
                 @foreach($course->author->topFourCourses() as $course)
                     <div class="row pb-3">
                         <div class="col-lg-5 align-self-center">
-                            <img src="{{ asset("storage/".$course->images[0]->src) }}" alt="img" class="fh5co_most_trading"/>
+                            <img src="{{ $course->images[0]->src }}" alt="img" class="fh5co_most_trading"/>
                         </div>
                         <div class="col-lg-7 mt-1 px-lg-0">
                             <div class="most_fh5co_treding_font">{{ $course->name }}</div>
