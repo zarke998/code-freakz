@@ -4,7 +4,7 @@
 @section("title") CodeFreakz | About @endsection
 
 @section("content")
-<div class="row my-5">
+<div class="row my-5 mx-0">
     <div class="row col-sm-10 offset-sm-1 mx-0 mx-sm-auto">
         <div class="col-12 col-md-8 mb-5 mb-md-0">
             <h2 class="text-uppercase text-center mb-4">About me</h2>
