@@ -6,7 +6,7 @@
             <div class="d-flex align-items-center">
                 <a href="{{ route("logout") }}" class="cf-button cf-button-small mr-2">Logout</a>
                 <div class="d-flex align-items-center">
-                    <span class="mx-2 text-on-dark admin-name"> Andrej Zarkovski</span>
+                    <span class="mx-2 text-on-dark admin-name"> {{ session("user")->name }}</span>
                     <img class="profile-img fh5co_verticle_middle"
                          src="{{ asset("assets/images/profile-default.png") }}" alt="Profile deafult"/>
                 </div>
