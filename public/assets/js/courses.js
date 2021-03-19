@@ -97,7 +97,7 @@ function displayCourses(courses){
                         <a href="#" class="fh5co_mini_time py-1 pb-3"> ${course.author.first_name + " " + course.author.last_name} -
                         ${course.release_date} </a>
                         <div>
-                            ${course.description.substr(0, 50)} ...
+                            ${course.description.substr(0, 120)} ...
                         </div>
                     </div>
                     </div>`;
