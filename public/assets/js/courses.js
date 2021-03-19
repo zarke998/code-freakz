@@ -92,13 +92,12 @@ function displayCourses(courses){
                         </div>
                     </div>
                     <div class="col-md-7">
-                        <a href="../product_single.blade.php" class="fh5co_magna py-2"> ${ course.name }</a>
+                        <a href="/courses/${course.id}" class="fh5co_magna py-2"> ${ course.name }</a>
                         <br>
                         <a href="#" class="fh5co_mini_time py-1 pb-3"> ${course.author.first_name + " " + course.author.last_name} -
                         ${course.release_date} </a>
                         <div class="fh5co_consectetur">${course.description.substr(0, 50)}...</div>
-                    </div>
-                </div>`;
+                    </div></div>`;
     });
 
     $(container).append(content);
