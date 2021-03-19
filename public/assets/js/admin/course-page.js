@@ -71,6 +71,9 @@ function displayCourses(courses) {
 function deleteCourse(e){
     e.preventDefault();
 
+    if(!confirm("You're about to delete this course. Proceed?"))
+        return;
+
     let btn = this;
 
     let deleteUrl = $(btn).attr("href");
