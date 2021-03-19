@@ -96,8 +96,11 @@ function displayCourses(courses){
                         <br>
                         <a href="#" class="fh5co_mini_time py-1 pb-3"> ${course.author.first_name + " " + course.author.last_name} -
                         ${course.release_date} </a>
-                        <div class="fh5co_consectetur">${course.description.substr(0, 50)}...</div>
-                    </div></div>`;
+                        <div>
+                            ${course.description.substr(0, 50)} ...
+                        </div>
+                    </div>
+                    </div>`;
     });
 
     $(container).append(content);
