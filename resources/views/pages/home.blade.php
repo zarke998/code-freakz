@@ -142,7 +142,7 @@
                             <img style="object-fit: cover" src="{{ $course->images[0]->src }}" alt="img" class="fh5co_most_trading"/>
                         </div>
                         <div class="col-lg-7 mt-1 px-lg-0">
-                            <div class="most_fh5co_treding_font">{{ $course->name }}</div>
+                            <div class="most_fh5co_treding_font"><a class="cf-link" href="{{ route("courses.show", ["id" => $course->id]) }}">{{ $course->name }} </a></div>
                             <div class="most_fh5co_treding_font_123">{{ $course->release_date }}</div>
                         </div>
                     </div>

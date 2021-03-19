@@ -54,7 +54,7 @@ function displayCourses(courses) {
     courses.forEach(function (course) {
         coursesHtml += `<tr>
                         <th scope="row">${ course.id }</th>
-                        <td>${ course.name }</td>
+                        <td><a href="/courses/${course.id}" class="cf-link">${ course.name }</a></td>
                         <td>${ course.author.first_name + " " + course.author.last_name}</td>
                         <td class="table-actions d-flex justify-content-center">
                             <a href="/courses/edit/${ course.id }" class="cf-link"><i class="lni lni-pencil"></i></a>
