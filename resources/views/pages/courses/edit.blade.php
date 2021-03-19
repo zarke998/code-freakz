@@ -93,7 +93,7 @@
                             <p class="cf-text-medium text-center">Course cover</p>
                             <input id="course_image_input" type="file" class="form-control cf-input" name="image"
                                    placeholder="Course cover" aria-label="Email" aria-describedby="basic-addon1">
-                            <img class="w-100 mt-2" src="{{ asset("storage/".$course->images[0]->src) }}"
+                            <img class="w-100 mt-2" src="{{ $course->images[0]->src }}"
                                  alt="Course cover"/>
                         </div>
                         <div>
