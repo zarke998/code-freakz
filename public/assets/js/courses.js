@@ -99,6 +99,9 @@ function displayCourses(courses){
                         <div>
                             ${course.description.substr(0, 120)} ...
                         </div>
+                        <div class="d-flex justify-content-end mr-4">
+                            <span style="color:red; font-size: 18px"> ${ course.price }$</span>
+                        </div>
                     </div>
                     </div>`;
     });

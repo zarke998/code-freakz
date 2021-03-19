@@ -66,6 +66,10 @@
                             <a href="{{ route("courses.show", [ "id" => $course->id]) }}" class="d-block fh5co_small_post_heading"><span class="">{{ $course->name }}</span></a>
                             <div class="c_g"><i class="fa fa-clock-o"></i> {{ $course->release_date }}</div>
                         </div>
+                        <div class="d-flex justify-content-end align-items-center">
+                            <span> <del>{{ $course->price }}$ </del></span> -
+                            <span style="color:red; font-size: 18px"> {{ $course->price - ($course->price * $course->discount / 100) }}$</span>
+                        </div>
                     </div>
                 </div>
             @endforeach
@@ -118,6 +122,9 @@
                             </a>
                             <div class="fh5co_consectetur">
                                 {!! substr($course->description,0, 120) !!} ...
+                            </div>
+                            <div class="d-flex justify-content-end mr-4">
+                                <span style="color:red; font-size: 18px"> {{ $course->price }}$</span>
                             </div>
                         </div>
                     </div>
