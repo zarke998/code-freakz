@@ -75,6 +75,9 @@
                             <a class="nav-link" href="{{ route($menu_item->route) }}">{{ $menu_item->name }} <span class="sr-only">(current)</span></a>
                         </li>
                     @endforeach
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ URL::to("/assets/documentation.pdf")  }}">Documentation <span class="sr-only">(current)</span></a>
+                        </li>
                 </ul>
             </div>
         </nav>

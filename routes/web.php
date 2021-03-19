@@ -77,5 +77,12 @@ Route::middleware("admin")->group(function(){
 //endregion
 
 Route::get("/403", [\App\Http\Controllers\StatusController::class, "forbidden"])->name("403");
+Route::get("/documentation", function(){
+    $headers = [
+        'Content-Type' => 'application/pdf',
+    ];
+    $file = File::get(asset("assets/documentation.pdf"));
+    return response()->download($file, 'documentation.pdf', $headers);
+})->name("documentation");
 
 Route::get("/test", [\App\Http\Controllers\TestController::class, "test"]);
