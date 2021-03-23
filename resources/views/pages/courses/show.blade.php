@@ -36,7 +36,7 @@
                 </div>
 
                 <div class="d-flex justify-content-center mt-2">
-                    <button class="cf-input cf-button w-50">Add to cart</button>
+                    <a href="#" class="cf-input cf-button w-50 add-to-cart-btn" data-courseid="{{ $course->id }}">Add to cart</a>
                 </div>
             </div>
 
