@@ -99,14 +99,20 @@ function displayCourses(courses){
                         <div>
                             ${course.description.substr(0, 120)} ...
                         </div>
-                        <div class="d-flex justify-content-end mr-4">
-                            <span style="color:red; font-size: 18px">`;
+                        <div class="d-flex justify-content-between align-items-center my-3 mr-4">
+                            <div class="cf-button my-2 px-3">
+                                Add to cart
+                            </div>
+                            <div>
+                                <span style="color:red; font-size: 18px">`;
 
                             if(course.price == 0) content+= `FREE`;
                             else content += `${ Math.round(course.price * 100) / 100 }$`;
 
                             content+=
-                        `</span></div>
+                                `</span>
+                            </div>
+                        </div>
                     </div>
                     </div>`;
     });
