@@ -138,6 +138,16 @@ ul{
     cursor: default;
 }
 
+.cart-link i{
+    color: white;
+    font-size: 22px;
+
+    margin-right: 25px;
+}
+.cart-link i:hover{
+    color: var(--yellow-primary);
+}
+
 /*#region Admin panel btn*/
 .admin-panel-link{
     display: flex;
