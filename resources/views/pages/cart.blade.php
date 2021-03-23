@@ -13,12 +13,12 @@
         </div>
         <div class="col-10 offset-1" style="overflow: auto">
             <table class="cart-table w-100">
-                <thead style="border-bottom: 1px solid gray">
+                <theawed style="border-bottom: 1px solid gray">
                     <td>Image</td>
                     <td>Title</td>
                     <td>Price</td>
                     <td>Actions</td>
-                </thead>
+                </theawed>
                 <tbody class="cart-container">
 
                 </tbody>
