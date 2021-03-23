@@ -67,7 +67,7 @@
                             <div class="c_g"><i class="fa fa-clock-o"></i> {{ $course->release_date }}</div>
                         </div>
                         <div class="d-flex justify-content-between align-items-center">
-                            <div class="cf-button my-2 px-3">
+                            <div class="cf-button my-2 px-3 add-to-cart-btn" data-courseId="{{ $course->id }}">
                                 Add to cart
                             </div>
                             <div>
@@ -98,7 +98,7 @@
                                 <div class="c_g"><i class="fa fa-clock-o"></i> {{ $course->release_date }}</div>
                             </div>
                             <div class="d-flex justify-content-center">
-                                <div class="cf-button my-2 px-3">
+                                <div class="cf-button my-2 px-3 add-to-cart-btn" data-courseId="{{ $course->id }}">
                                     Add to cart
                                 </div>
                             </div>
@@ -134,7 +134,7 @@
                                 {!! substr($course->description,0, 120) !!} ...
                             </div>
                             <div class="d-flex justify-content-between mr-4 align-items-center my-3">
-                                <div class="cf-button my-2 px-3">
+                                <div class="cf-button my-2 px-3 add-to-cart-btn" data-courseId="{{ $course->id }}">
                                     Add to cart
                                 </div>
                                 <div>

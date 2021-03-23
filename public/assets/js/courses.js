@@ -100,7 +100,7 @@ function displayCourses(courses){
                             ${course.description.substr(0, 120)} ...
                         </div>
                         <div class="d-flex justify-content-between align-items-center my-3 mr-4">
-                            <div class="cf-button my-2 px-3">
+                            <div class="cf-button my-2 px-3 add-to-cart-btn" data-courseId="${ course.id }">
                                 Add to cart
                             </div>
                             <div>
