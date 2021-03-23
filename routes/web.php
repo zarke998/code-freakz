@@ -54,6 +54,10 @@ Route::delete("/categories/delete/{id}", [\App\Http\Controllers\CategoryControll
 
 Route::get('/contact', [\App\Http\Controllers\ContactController::class, "index"])->name("contact");
 Route::get('/about', [\App\Http\Controllers\AboutController::class, "index"])->name("about");
+Route::get('/cart', [\App\Http\Controllers\CartController::class, "index"])->name("cart");
+
+Route::get('/cart/getItems', [\App\Http\Controllers\CartController::class, "items"])->name("cart.items");
+Route::post('/cart/save', [\App\Http\Controllers\CartController::class, "save"])->name("cart.save");
 
 //region Account routes
 Route::get("/login", [\App\Http\Controllers\AccountController::class, "loginPage"])->name("loginPage");

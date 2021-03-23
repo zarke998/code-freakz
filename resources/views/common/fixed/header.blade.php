@@ -3,7 +3,7 @@
     <div class="d-flex justify-content-end align-items-center">
 
         @if(session("user"))
-            <a href="" class="cf-link cart-link"><i class="lni lni-cart"></i></a>
+            <a href="{{ route("cart") }}" class="cf-link cart-link"><i class="lni lni-cart"></i></a>
             @if(session("user")->role->name == "admin")
                 <a href="{{ route("admin.coursesPage") }}" class="admin-panel-link mr-4">
                     <span>Admin panel</span>

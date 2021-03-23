@@ -148,6 +148,10 @@ ul{
     color: var(--yellow-primary);
 }
 
+.cart-table td{
+    padding: 20px 20px;
+}
+
 /*#region Admin panel btn*/
 .admin-panel-link{
     display: flex;
