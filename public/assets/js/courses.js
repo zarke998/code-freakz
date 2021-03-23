@@ -127,6 +127,7 @@ function displayCourses(courses){
     });
 
     $(container).append(content);
+    $(".add-to-cart-btn").click(addToCart);
 }
 
 function goToPage(e){
