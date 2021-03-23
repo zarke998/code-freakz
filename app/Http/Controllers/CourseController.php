@@ -200,6 +200,10 @@ class CourseController extends FrontendController
 
         $data["courses"] = $courses;
 
+        $data["authenticated"] = false;
+        if(session("user") != null)
+            $data["authenticated"] = true;
+
         return response()->json($data);
     }
 }

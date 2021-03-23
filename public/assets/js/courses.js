@@ -3,6 +3,7 @@ var offset = 0;
 var filtered_count;
 var active_page = 1;
 var filters = {};
+var authenticated = false;
 
 $(document).ready(function(){
     initializeCourses();
@@ -20,6 +21,8 @@ function initializeCourses(){
     }, function(resultData){
         console.log(resultData);
         filtered_count = resultData.filtered_count;
+
+        authenticated = resultData.authenticated;
 
         displayCourses(resultData.courses);
 
@@ -83,6 +86,9 @@ function displayCourses(courses){
     let container = $(".course-container");
     $(container).html("");
 
+    let cartAlignClass = "";
+    if(authenticated) cartAlignClass = "justify-content-between";
+
     courses.forEach(function(course){
         content += `<div class="row pb-4">
                     <div class="col-md-5">
@@ -99,10 +105,13 @@ function displayCourses(courses){
                         <div>
                             ${course.description.substr(0, 120)} ...
                         </div>
-                        <div class="d-flex justify-content-between align-items-center my-3 mr-4">
-                            <div class="cf-button my-2 px-3 add-to-cart-btn" data-courseId="${ course.id }">
-                                Add to cart
-                            </div>
+                        <div class="d-flex justify-content-end ${cartAlignClass} align-items-center my-3 mr-4">`;
+                            if(authenticated)
+                                content += `
+                                            <div class="cf-button my-2 px-3 add-to-cart-btn" data-courseId="${ course.id }">
+                                                Add to cart
+                                            </div>`;
+                            content += `
                             <div>
                                 <span style="color:red; font-size: 18px">`;
 

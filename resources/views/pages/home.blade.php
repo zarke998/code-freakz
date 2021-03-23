@@ -66,10 +66,12 @@
                             <a href="{{ route("courses.show", [ "id" => $course->id]) }}" class="d-block fh5co_small_post_heading"><span class="">{{ $course->name }}</span></a>
                             <div class="c_g"><i class="fa fa-clock-o"></i> {{ $course->release_date }}</div>
                         </div>
-                        <div class="d-flex justify-content-between align-items-center">
+                        <div class="d-flex justify-content-end @if(session("user"))justify-content-between @endif align-items-center">
+                            @if(session("user"))
                             <div class="cf-button my-2 px-3 add-to-cart-btn" data-courseId="{{ $course->id }}">
                                 Add to cart
                             </div>
+                            @endif
                             <div>
                                 <span> <del>{{ $course->price }}$ </del></span> -
                                 <span style="color:red; font-size: 18px"> {{ round($course->price - ($course->price * $course->discount / 100), 2) }}$</span>
@@ -98,9 +100,11 @@
                                 <div class="c_g"><i class="fa fa-clock-o"></i> {{ $course->release_date }}</div>
                             </div>
                             <div class="d-flex justify-content-center">
-                                <div class="cf-button my-2 px-3 add-to-cart-btn" data-courseId="{{ $course->id }}">
-                                    Add to cart
-                                </div>
+                                @if(session("user"))
+                                    <div class="cf-button my-2 px-3 add-to-cart-btn" data-courseId="{{ $course->id }}">
+                                        Add to cart
+                                    </div>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -133,10 +137,12 @@
                             <div class="fh5co_consectetur">
                                 {!! substr($course->description,0, 120) !!} ...
                             </div>
-                            <div class="d-flex justify-content-between mr-4 align-items-center my-3">
+                            <div class="d-flex justify-content-end @if(session("user")) justify-content-between @endif mr-4 align-items-center my-3">
+                                @if(session("user"))
                                 <div class="cf-button my-2 px-3 add-to-cart-btn" data-courseId="{{ $course->id }}">
                                     Add to cart
                                 </div>
+                                @endif
                                 <div>
                                     <span style="color:red; font-size: 18px">
                                         @if($course->price == 0)
