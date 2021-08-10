@@ -4,7 +4,7 @@
 
 
 @section("content")
-    <div class="row mb-5">
+    <div class="row mb-5 mx-0">
         <div class="col-12">
             <h1 class="text-center py-4">Login</h1>
         </div>
